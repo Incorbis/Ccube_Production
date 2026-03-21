@@ -21,7 +21,7 @@ const events = [
 const categoryColors: Record<string, string> = {
   Hackathon: "bg-primary/15 text-primary",
   Workshop: "bg-accent/15 text-accent",
-  Meetup: "bg-emerald-500/15 text-emerald-400",
+  Meetup: "bg-emerald-500/15 text-emerald-600",
 };
 
 const Index = () => (
