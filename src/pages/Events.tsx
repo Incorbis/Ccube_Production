@@ -20,8 +20,8 @@ const categories = ["All", "Hackathon", "Workshop", "Meetup", "Competition"];
 const categoryColors: Record<string, string> = {
   Hackathon: "bg-primary/15 text-primary",
   Workshop: "bg-accent/15 text-accent",
-  Meetup: "bg-emerald-500/15 text-emerald-400",
-  Competition: "bg-sky-500/15 text-sky-400",
+  Meetup: "bg-emerald-500/15 text-emerald-600",
+  Competition: "bg-sky-500/15 text-sky-600",
 };
 
 const Events = () => {

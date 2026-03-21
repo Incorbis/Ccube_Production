@@ -21,7 +21,7 @@ const events = [
 const categoryColors: Record<string, string> = {
   Hackathon: "bg-primary/15 text-primary",
   Workshop: "bg-accent/15 text-accent",
-  Meetup: "bg-emerald-500/15 text-emerald-400",
+  Meetup: "bg-emerald-500/15 text-emerald-600",
 };
 
 const Index = () => (
@@ -29,8 +29,8 @@ const Index = () => (
     {/* Hero */}
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/8 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/8 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
 
       <div className="max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
@@ -150,7 +150,7 @@ const Index = () => (
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="glass-card glow-border p-12 md:p-16 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/10 rounded-full blur-[80px]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/6 rounded-full blur-[80px]" />
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 relative">Ready to build something great?</h2>
             <p className="text-muted-foreground text-lg max-w-md mx-auto mb-8 relative">Join 120+ students who are shaping the future of digital creativity at our college.</p>
             <div className="flex flex-wrap gap-4 justify-center relative">
