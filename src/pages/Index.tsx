@@ -150,7 +150,7 @@ const Index = () => (
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="glass-card glow-border p-12 md:p-16 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/10 rounded-full blur-[80px]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/6 rounded-full blur-[80px]" />
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 relative">Ready to build something great?</h2>
             <p className="text-muted-foreground text-lg max-w-md mx-auto mb-8 relative">Join 120+ students who are shaping the future of digital creativity at our college.</p>
             <div className="flex flex-wrap gap-4 justify-center relative">

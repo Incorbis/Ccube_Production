@@ -44,7 +44,7 @@ const Join = () => {
         <ScrollReveal>
           <div className="glass-card glow-border p-12 text-center max-w-md">
             <div className="w-16 h-16 rounded-2xl bg-emerald-500/15 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+              <CheckCircle2 className="w-8 h-8 text-emerald-600" />
             </div>
             <h2 className="text-2xl font-bold mb-3">You're in!</h2>
             <p className="text-muted-foreground leading-relaxed">Welcome to PixelCraft, {form.name.split(" ")[0]}. Check your email for next steps and our onboarding guide.</p>

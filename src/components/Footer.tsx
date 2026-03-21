@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Mail, Github } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="border-t border-border/50 bg-card/30">
+  <footer className="border-t border-border/60 bg-muted/40">
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
         <div className="md:col-span-2">
