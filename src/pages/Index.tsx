@@ -29,8 +29,8 @@ const Index = () => (
     {/* Hero */}
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/8 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/8 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
 
       <div className="max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
