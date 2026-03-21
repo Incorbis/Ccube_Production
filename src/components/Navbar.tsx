@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -29,10 +30,8 @@ const Navbar = () => {
     <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "nav-glass shadow-lg shadow-background/50" : "bg-transparent")}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center transition-transform duration-200 group-hover:scale-105 group-active:scale-95">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
-          </div>
-          <span className="text-lg font-bold tracking-tight">PixelCraft</span>
+          <img src={logo} alt="CUBE Logo" className="w-9 h-9 object-contain transition-transform duration-200 group-hover:scale-105 group-active:scale-95" />
+          <span className="text-lg font-bold tracking-tight">CUBE</span>
         </Link>
 
         {/* Desktop */}
