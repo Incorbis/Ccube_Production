@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Sparkles, Instagram, Linkedin, Mail, Github } from "lucide-react";
+import { Instagram, Linkedin, Mail, Github } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border/50 bg-card/30">
@@ -7,10 +8,8 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
         <div className="md:col-span-2">
           <Link to="/" className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-primary-foreground" />
-            </div>
-            <span className="text-lg font-bold tracking-tight">PixelCraft</span>
+            <img src={logo} alt="CUBE Logo" className="w-9 h-9 object-contain" />
+            <span className="text-lg font-bold tracking-tight">CUBE</span>
           </Link>
           <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
             A community of designers, developers, and creators pushing the boundaries of digital craft.
