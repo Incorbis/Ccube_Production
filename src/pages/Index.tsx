@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera } from "lucide-react";
 import { motion } from "framer-motion";
+import Ballpit from "@/components/ui/Ballbit";
 
 const stats = [
   { icon: Users, value: "120+", label: "Active Members" },
@@ -26,59 +27,94 @@ const categoryColors: Record<string, string> = {
 
 const Index = () => (
   <div className="min-h-screen">
-    {/* Hero */}
-    <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
 
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono tracking-wide text-primary mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Now recruiting for 2026-27
-            </span>
-          </motion.div>
+    {/* ── Hero ──────────────────────────────────────────────────────── */}
+    {/*
+      Layering order (bottom → top):
+        0  Ballpit canvas   (absolute, fills wrapper)
+        1  Dark overlay     (absolute, rgba scrim)
+        2  Glow decorations (absolute, pointer-events none)
+        3  Hero text/CTA    (relative, normal flow inside wrapper)
+    */}
+    <div style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden" }}>
 
-          <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Where pixels
-            <br />
-            meet <span className="gradient-text">purpose</span>
-          </motion.h1>
+      {/* Z=0 · Ballpit */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <Ballpit
+          count={100}
+          gravity={0.01}
+          friction={0.9975}
+          wallBounce={0.95}
+          followCursor={false}
+          className="w-full h-full"
+        />
+      </div>
 
-          <motion.p
-            className="mt-6 text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          >
-            PixelCraft is a community of designers, developers, and creators at the intersection of art and technology.
-          </motion.p>
+      {/* Z=1 · Scrim — tones down the balls so text is readable */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none" }} />
 
-          <motion.div
-            className="flex flex-wrap gap-4 mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Link to="/join">
-              <Button variant="hero" size="xl">
-                Join Now <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
-            <Link to="/events">
-              <Button variant="hero-outline" size="xl">Explore Events</Button>
-            </Link>
-          </motion.div>
+      {/* Z=2 · Glow blobs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-glow" style={{ zIndex: 2, pointerEvents: "none" }} />
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ zIndex: 2, animationDelay: "1.5s", pointerEvents: "none" }} />
+
+      {/* Z=3 · Hero content */}
+      <div
+        className="section-padding pt-32"
+        style={{ position: "relative", zIndex: 3, minHeight: "100vh", display: "flex", alignItems: "center" }}
+      >
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="max-w-3xl">
+
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono tracking-wide text-primary mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Now recruiting for 2026-27
+              </span>
+            </motion.div>
+
+            <motion.h1
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Where pixels
+              <br />
+              meet <span className="gradient-text">purpose</span>
+            </motion.h1>
+
+            <motion.p
+              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            >
+              PixelCraft is a community of designers, developers, and creators at the intersection of art and technology.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-4 mt-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Link to="/join">
+                <Button variant="hero" size="xl">
+                  Join Now <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/events">
+                <Button variant="hero-outline" size="xl">Explore Events</Button>
+              </Link>
+            </motion.div>
+
+          </div>
         </div>
       </div>
-    </section>
+
+    </div>
+    {/* ── End Hero ──────────────────────────────────────────────────── */}
+
 
     {/* Stats */}
     <section className="section-padding py-16">
@@ -161,6 +197,7 @@ const Index = () => (
         </ScrollReveal>
       </div>
     </section>
+
   </div>
 );
 
