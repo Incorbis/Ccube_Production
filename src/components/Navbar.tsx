@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/events", label: "Events" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/team", label: "Team" },
   { to: "/contact", label: "Contact" },
 ];
@@ -28,7 +27,6 @@ const Navbar = () => {
   useEffect(() => setOpen(false), [location]);
 
   return (
-    
     <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "nav-glass shadow-sm" : "bg-transparent")}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2 group">
@@ -50,9 +48,6 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
-          <Link to="/join" className="ml-3">
-            <Button variant="hero" size="sm">Join Club</Button>
-          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -76,9 +71,6 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
-          <Link to="/join" className="block pt-2">
-            <Button variant="hero" className="w-full">Join Club</Button>
-          </Link>
         </div>
       )}
     </nav>
