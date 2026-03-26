@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Join from "./pages/Join";
 import NotFound from "./pages/NotFound";
 import SmoothCursor from "./components/magicui/SmoothCursor";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
