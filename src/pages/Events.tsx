@@ -1,19 +1,25 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
-type EventType = { title: string; date: string; location: string; category: string; description: string; past?: boolean };
+type EventType = {
+  title: string;
+  date: string;
+  location: string;
+  category: string;
+  description: string;
+  image?: string;
+};
 
 const allEvents: EventType[] = [
-  // AY 2025-26 Upcoming
   {
     title: "SE Induction and Fresher's 2K25",
     date: "Jul 22, 2025",
     location: "Computer Department",
     category: "Cultural",
     description: "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.",
+    image: "", // 👈 Add your URL or path here
   },
   {
     title: "SPOS Expert Session",
@@ -21,6 +27,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Expert Session",
     description: "An expert session on System Programming and Operating Systems (SPOS) aimed at TE students to deepen their understanding of core CS concepts.",
+    image: "",
   },
   {
     title: "C Cube Activity (Teacher's Day)",
@@ -28,6 +35,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "A special event organised by C-Cube students to celebrate and honour the teaching staff on Teacher's Day.",
+    image: "",
   },
   {
     title: "C Cube Activity (Engineer's Day)",
@@ -35,16 +43,15 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Technical",
     description: "A technical celebration event for Engineer's Day, encouraging students to showcase their innovative ideas and engineering spirit.",
+    image: "",
   },
-
-  // AY 2024-25 Past Events
   {
     title: "CDAC Visit",
     date: "Dec 28, 2024",
     location: "CDAC, Pune",
     category: "Industrial Visit",
-    description: "TE students visited CDAC (Centre for Development of Advanced Computing) gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.",
-    past: true,
+    description: "TE students visited CDAC gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.",
+    image: "",
   },
   {
     title: "Expert Session on Recent Testing Tools",
@@ -52,7 +59,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Expert Session",
     description: "An expert-led session for SE students covering current trends in software testing tools, automation, performance testing, and the role of AI in software development.",
-    past: true,
+    image: "",
   },
   {
     title: "Cleaning Camp at Lohagad",
@@ -60,7 +67,7 @@ const allEvents: EventType[] = [
     location: "Lohagad Fort, Maharashtra",
     category: "Social",
     description: "TE students organised a cleanliness drive at the historic Lohagad Fort to combat environmental degradation, promoting eco-friendly tourism and social responsibility.",
-    past: true,
+    image: "",
   },
   {
     title: "Old Age Home Visit",
@@ -68,7 +75,7 @@ const allEvents: EventType[] = [
     location: "Local Old Age Home",
     category: "Social",
     description: "TE students visited a local old age home under C-Cube, spending time with elderly residents through singing, games, and storytelling — fostering empathy and compassion.",
-    past: true,
+    image: "",
   },
   {
     title: "Farewell 2K25",
@@ -76,17 +83,15 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "A heartfelt farewell event organised for the graduating BE batch of 2025, celebrating their journey and wishing them success in their future endeavours.",
-    past: true,
+    image: "",
   },
-
-  // Older Past Events (2022–2023)
   {
     title: "Engineer's Day Celebration",
     date: "Sep 2023",
     location: "Computer Department",
     category: "Cultural",
     description: "C-Cube celebrated Engineer's Day with engaging activities and events, recognising the spirit of engineering among students.",
-    past: true,
+    image: "",
   },
   {
     title: "Industrial Visit – CognaTech",
@@ -94,7 +99,7 @@ const allEvents: EventType[] = [
     location: "CognaTech, Narhe, Pune",
     category: "Industrial Visit",
     description: "Students visited CognaTech for an industrial exposure experience, gaining real-world insights into the tech industry.",
-    past: true,
+    image: "",
   },
   {
     title: "Cleanliness Drive",
@@ -102,7 +107,7 @@ const allEvents: EventType[] = [
     location: "On Campus",
     category: "Social",
     description: "A campus cleanliness initiative organised by C-Cube to promote environmental awareness and a clean campus culture.",
-    past: true,
+    image: "",
   },
   {
     title: "Remote Teaching",
@@ -110,7 +115,7 @@ const allEvents: EventType[] = [
     location: "Remote Village School",
     category: "Social",
     description: "C-Cube students volunteered to teach at a remote primary school, bridging the educational gap and giving back to the community.",
-    past: true,
+    image: "",
   },
   {
     title: "Remote Teaching",
@@ -118,7 +123,7 @@ const allEvents: EventType[] = [
     location: "Remote Village School",
     category: "Social",
     description: "Continuing the tradition of community outreach, C-Cube students conducted teaching sessions at an underprivileged school in 2023.",
-    past: true,
+    image: "",
   },
   {
     title: "Trekking & Cleanliness Drive",
@@ -126,7 +131,7 @@ const allEvents: EventType[] = [
     location: "Talegaon Dabhade, Maharashtra",
     category: "Social",
     description: "A combined trekking and cleanliness drive at Talegaon Dabhade, promoting fitness, teamwork, and environmental responsibility.",
-    past: true,
+    image: "",
   },
 ];
 
@@ -140,13 +145,13 @@ const categoryColors: Record<string, string> = {
   Social: "bg-orange-500/15 text-orange-600",
 };
 
+// Fallback placeholder shown when no image is provided
+const PLACEHOLDER = "https://placehold.co/600x300?text=Photo+Coming+Soon";
+
 const Events = () => {
   const [filter, setFilter] = useState("All");
-  const [tab, setTab] = useState<"upcoming" | "past">("upcoming");
 
-  const filtered = allEvents
-    .filter((e) => (tab === "upcoming" ? !e.past : e.past))
-    .filter((e) => filter === "All" || e.category === filter);
+  const filtered = allEvents.filter((e) => filter === "All" || e.category === filter);
 
   return (
     <div className="min-h-screen pt-24">
@@ -157,23 +162,6 @@ const Events = () => {
             title="Learn, grow, and give back"
             description="From expert sessions to social drives — C-Cube organises technical and non-technical events for holistic student development."
           />
-
-          {/* Tabs */}
-          <div className="flex justify-center gap-2 mb-8">
-            {(["upcoming", "past"] as const).map((t) => (
-              <button
-                key={t}
-                onClick={() => setTab(t)}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200 capitalize active:scale-95 ${
-                  tab === t
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                    : "bg-secondary text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
 
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
@@ -196,35 +184,44 @@ const Events = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {filtered.map((e, i) => (
               <ScrollReveal key={e.title + e.date} delay={i * 0.08}>
-                <div className="glass-card p-6 flex flex-col h-full group transition-all duration-300">
-                  <div className="flex items-center justify-between mb-3">
-                    <span
-                      className={`text-xs font-mono px-3 py-1 rounded-full ${
-                        categoryColors[e.category] || "bg-secondary text-muted-foreground"
-                      }`}
-                    >
-                      {e.category}
-                    </span>
+                <div className="glass-card overflow-hidden flex flex-col h-full group transition-all duration-300">
+
+                  {/* Event Photo */}
+                  <div className="w-full h-48 overflow-hidden bg-secondary">
+                    <img
+                      src={e.image || PLACEHOLDER}
+                      alt={e.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {e.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
-                    {e.description}
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" /> {e.date}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5" /> {e.location}
-                    </span>
+
+                  {/* Card Content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="mb-3">
+                      <span
+                        className={`text-xs font-mono px-3 py-1 rounded-full ${
+                          categoryColors[e.category] || "bg-secondary text-muted-foreground"
+                        }`}
+                      >
+                        {e.category}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {e.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
+                      {e.description}
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5" /> {e.date}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="w-3.5 h-3.5" /> {e.location}
+                      </span>
+                    </div>
                   </div>
-                  {!e.past && (
-                    <Button variant="hero" size="sm" className="self-start">
-                      Register <ArrowRight className="w-3.5 h-3.5" />
-                    </Button>
-                  )}
+
                 </div>
               </ScrollReveal>
             ))}

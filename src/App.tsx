@@ -12,12 +12,14 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Join from "./pages/Join";
 import NotFound from "./pages/NotFound";
+import SmoothCursor from "./components/magicui/SmoothCursor";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <SmoothCursor />
       <Toaster />
       <Sonner />
       <BrowserRouter>
