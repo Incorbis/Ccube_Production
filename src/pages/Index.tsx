@@ -5,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 import Ballpit from "@/components/ui/Ballbit";
+import CubeModel from "../components/Cubemodel"; // adjust path
 
 const stats = [
   { icon: Users, value: "120+", label: "Active Members" },
@@ -108,16 +109,14 @@ const Index = () => (
               </Link>
             </motion.div>
 
+
+
           </div>
+          
         </div>
+         
       </div>
-
-    </div>
-    {/* ── End Hero ──────────────────────────────────────────────────── */}
-
-
-    {/* Stats */}
-    <section className="section-padding py-16">
+      <section className="section-padding py-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
@@ -132,6 +131,17 @@ const Index = () => (
         </div>
       </div>
     </section>
+
+    </div>
+
+
+
+ <div className="w-full min-h-screen bg-white">
+        <div className="w-full md:w-[100%] h-[500px]">
+          <CubeModel />
+        </div>
+    </div>
+
 
     {/* What we do */}
     <section className="section-padding">

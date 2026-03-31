@@ -3,6 +3,19 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Calendar, MapPin } from "lucide-react";
 
+import img1 from "../assets/Events/Events/SEInduction/1.png"
+import img2 from "../assets/Events/Events/SposExpertSession/1.jpg"
+import img3 from "../assets/Events/Events/engineerDay/1.jpg"
+import img4 from "../assets/Events/Events/TeacherDay/5.jpg"
+import img5 from "../assets/Events/Events/CDAC/1.jpg"
+import img6 from "../assets/Events/Events/TestingTools/1.png"
+import img7 from "../assets/Events/Events/OldAgeVisit/1.jpg"
+import img8 from "../assets/Events/Events/Farewell/1.jpg"
+import img9 from "../assets/Events/Events/engineerDay/2.jpg"
+import img10 from "../assets/Events/Events/CleaningCampLohagad/1.jpg"
+import img11 from "../assets/Events/Events/TrekkingCleaning/2.jpg"
+
+import img14 from "../assets/Events/Events/TrekkingCleaning/1.jpg"
 type EventType = {
   title: string;
   date: string;
@@ -19,7 +32,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.",
-    image: "", // 👈 Add your URL or path here
+    image: img1, // 👈 Add your URL or path here
   },
   {
     title: "SPOS Expert Session",
@@ -27,7 +40,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Expert Session",
     description: "An expert session on System Programming and Operating Systems (SPOS) aimed at TE students to deepen their understanding of core CS concepts.",
-    image: "",
+    image: img2,
   },
   {
     title: "C Cube Activity (Teacher's Day)",
@@ -35,7 +48,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "A special event organised by C-Cube students to celebrate and honour the teaching staff on Teacher's Day.",
-    image: "",
+    image: img4,
   },
   {
     title: "C Cube Activity (Engineer's Day)",
@@ -43,7 +56,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Technical",
     description: "A technical celebration event for Engineer's Day, encouraging students to showcase their innovative ideas and engineering spirit.",
-    image: "",
+    image: img3,
   },
   {
     title: "CDAC Visit",
@@ -51,7 +64,7 @@ const allEvents: EventType[] = [
     location: "CDAC, Pune",
     category: "Industrial Visit",
     description: "TE students visited CDAC gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.",
-    image: "",
+    image: img5,
   },
   {
     title: "Expert Session on Recent Testing Tools",
@@ -59,7 +72,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Expert Session",
     description: "An expert-led session for SE students covering current trends in software testing tools, automation, performance testing, and the role of AI in software development.",
-    image: "",
+    image: img6,
   },
   {
     title: "Cleaning Camp at Lohagad",
@@ -67,7 +80,7 @@ const allEvents: EventType[] = [
     location: "Lohagad Fort, Maharashtra",
     category: "Social",
     description: "TE students organised a cleanliness drive at the historic Lohagad Fort to combat environmental degradation, promoting eco-friendly tourism and social responsibility.",
-    image: "",
+    image: img10,
   },
   {
     title: "Old Age Home Visit",
@@ -75,7 +88,7 @@ const allEvents: EventType[] = [
     location: "Local Old Age Home",
     category: "Social",
     description: "TE students visited a local old age home under C-Cube, spending time with elderly residents through singing, games, and storytelling — fostering empathy and compassion.",
-    image: "",
+    image: img7,
   },
   {
     title: "Farewell 2K25",
@@ -83,7 +96,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "A heartfelt farewell event organised for the graduating BE batch of 2025, celebrating their journey and wishing them success in their future endeavours.",
-    image: "",
+    image: img8,
   },
   {
     title: "Engineer's Day Celebration",
@@ -91,7 +104,7 @@ const allEvents: EventType[] = [
     location: "Computer Department",
     category: "Cultural",
     description: "C-Cube celebrated Engineer's Day with engaging activities and events, recognising the spirit of engineering among students.",
-    image: "",
+    image: img9,
   },
   {
     title: "Industrial Visit – CognaTech",
@@ -107,7 +120,7 @@ const allEvents: EventType[] = [
     location: "On Campus",
     category: "Social",
     description: "A campus cleanliness initiative organised by C-Cube to promote environmental awareness and a clean campus culture.",
-    image: "",
+    image: img11,
   },
   {
     title: "Remote Teaching",
@@ -131,7 +144,7 @@ const allEvents: EventType[] = [
     location: "Talegaon Dabhade, Maharashtra",
     category: "Social",
     description: "A combined trekking and cleanliness drive at Talegaon Dabhade, promoting fitness, teamwork, and environmental responsibility.",
-    image: "",
+    image: img14,
   },
 ];
 

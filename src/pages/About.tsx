@@ -3,12 +3,42 @@ import SectionHeading from "@/components/SectionHeading";
 import { Target, Eye, Lightbulb, Heart, Users, Award, Calendar, Sparkles } from "lucide-react";
 
 const values = [
-  { icon: Target, title: "Learn by Doing", desc: "We believe the best way to learn is by building real projects for real people.", accent: "from-blue-500/20 to-cyan-500/10" },
-  { icon: Eye, title: "Design with Intent", desc: "Every pixel has purpose. We champion thoughtful, accessible, user-centered design.", accent: "from-purple-500/20 to-pink-500/10" },
-  { icon: Lightbulb, title: "Stay Curious", desc: "Technology evolves fast. We foster a culture of experimentation and lifelong learning.", accent: "from-amber-500/20 to-orange-500/10" },
-  { icon: Heart, title: "Community First", desc: "We grow together. Mentorship, collaboration, and support define who we are.", accent: "from-rose-500/20 to-red-500/10" },
-  { icon: Users, title: "Collaborate Fearlessly", desc: "Great ideas emerge from diverse perspectives. We celebrate bold contributions and constructive feedback.", accent: "from-indigo-500/20 to-violet-500/10" },
-  { icon: Award, title: "Ship with Pride", desc: "We don't just build for the classroom. Every project is a portfolio piece worth shipping to the world.", accent: "from-teal-500/20 to-cyan-500/10" },
+  {
+    icon: Heart,
+    title: "Serve the Community",
+    desc: "We are committed to making a positive impact through social work, helping rural communities, and supporting those in need.",
+    accent: "from-rose-500/20 to-red-500/10"
+  },
+  {
+    icon: Users,
+    title: "Empower Rural Students",
+    desc: "We bridge the gap by providing knowledge, awareness, and opportunities to students in rural areas.",
+    accent: "from-green-500/20 to-emerald-500/10"
+  },
+  {
+    icon: Lightbulb,
+    title: "Spread Awareness",
+    desc: "We organize campaigns and activities that promote education, hygiene, and social responsibility.",
+    accent: "from-yellow-500/20 to-orange-500/10"
+  },
+  {
+    icon: Target,
+    title: "Organize Impactful Events",
+    desc: "From Engineers Day to Women's Day, we celebrate and organize events that inspire learning and unity.",
+    accent: "from-blue-500/20 to-cyan-500/10"
+  },
+  {
+    icon: Award,
+    title: "Promote Clean & Healthy Living",
+    desc: "We conduct cleanliness drives and social initiatives to create a better and healthier environment.",
+    accent: "from-teal-500/20 to-green-500/10"
+  },
+  {
+    icon: Eye,
+    title: "Celebrate Together",
+    desc: "Through annual functions and community gatherings, we build strong bonds and unforgettable experiences.",
+    accent: "from-purple-500/20 to-pink-500/10"
+  }
 ];
 
 const timeline = [
@@ -74,17 +104,9 @@ const About = () => (
             <div className="glass-card p-8 md:p-12">
               <h3 className="text-xl font-semibold mb-4">The Beginning</h3>
               <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                PixelCraft was born in late 2022 when eight students — designers, developers, and dreamers — 
-                gathered in a college computer lab with a shared frustration: traditional tech clubs felt either 
-                too code-heavy or too design-isolated. We wanted a space where pixels met logic, where aesthetics 
-                informed algorithms, and where students could learn both craft and code without choosing sides.
+             C-Cube was established as a student-driven initiative under the Computer Department with the aim of creating a platform where students can explore beyond academics. It started with organizing small technical and non-technical events and gradually grew into a community that encourages innovation, collaboration, and overall student development.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-base">
-                What started as informal design critiques and weekend coding sessions quickly grew into something 
-                bigger. With the support of visionary faculty members and the energy of curious students, PixelCraft 
-                became an official college club — a creative engine that now empowers over 120 members to build, 
-                ship, and showcase work that matters.
-              </p>
+            
             </div>
 
             {/* Right side - Logo placeholder */}
@@ -112,11 +134,7 @@ const About = () => (
             <div className="glass-card p-8 h-full">
               <h3 className="text-xl font-semibold mb-4 text-primary">Our Vision</h3>
               <p className="text-muted-foreground leading-relaxed text-base">
-                To be the leading student community where design and technology converge — a launchpad for 
-                creative technologists who don't just build products, but craft experiences that matter. 
-                We envision a future where every PixelCraft member graduates not just with a degree, but 
-                with a portfolio of real-world projects, a network of mentors and peers, and the confidence 
-                to shape the digital landscape.
+              To provide students opportunities for holistic growth through extracurricular and co-curricular activities so that they can sail through their years in the department.
               </p>
             </div>
           </ScrollReveal>
@@ -127,26 +145,14 @@ const About = () => (
               <h3 className="text-xl font-semibold mb-4 text-primary">Our Mission</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Build Real Projects</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Move beyond classroom theory. Every semester, members work on live projects for 
-                    startups, NGOs, and campus initiatives — solving real problems for real users.
+ To engage students in active co-curricular learning.<br></br>
+To provide holistic learning experiences for all students.<br></br>
+To build supportive and inclusive student communities.<br></br>
+To develop soft skills in preparation for graduation and lifelong success.
                   </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Bridge Disciplines</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Break down silos between design, development, and product thinking. Our workshops 
-                    and sprints teach students to speak both languages fluently.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Foster Community</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Create a supportive ecosystem of mentorship, collaboration, and growth. Seniors 
-                    guide juniors, alumni stay connected, and everyone learns from each other.
-                  </p>
-                </div>
+                
               </div>
             </div>
           </ScrollReveal>
@@ -191,10 +197,8 @@ const About = () => (
                     </p>
                   </div>
 
-                  {/* Decorative corner accent */}
-                  <div className="absolute bottom-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                    <Sparkles className="w-6 h-6" />
-                  </div>
+                
+                  
                 </div>
               </div>
             </ScrollReveal>
@@ -346,9 +350,7 @@ const About = () => (
         {/* Bottom flourish */}
         <div className="flex justify-center mt-16">
           <div className="text-center">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 mx-auto mb-3 flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
+            
             <p className="text-muted-foreground text-sm font-semibold">And the story continues...</p>
           </div>
         </div>

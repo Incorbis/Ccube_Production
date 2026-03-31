@@ -3,6 +3,12 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Camera, Calendar, Users, X, ChevronLeft, ChevronRight, Sparkles, LucideIcon } from "lucide-react";
 
+import SeInduction1 from "../assets/Events/Events/SEInduction/1.png";
+import SeInduction2 from "../assets/Events/Events/SEInduction/2.png";
+import SeInduction3 from "../assets/Events/Events/SEInduction/3.png";
+import SeInduction4 from "../assets/Events/Events/SEInduction/4.png";
+import SeInduction5 from "../assets/Events/Events/SEInduction/5.png";
+
 // Type definitions
 interface Event {
   id: number;
@@ -24,11 +30,12 @@ const events: Event[] = [
     description: "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.",
     color: "from-purple-500 to-pink-500",
     photos: [
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=800&h=600&fit=crop",
+      SeInduction1,
+     SeInduction2,
+       SeInduction3,
+     SeInduction4,
+       SeInduction5
+     
     ]
   },
   {
@@ -153,51 +160,6 @@ const events: Event[] = [
   },
   {
     id: 10,
-    title: "Engineer's Day Celebration",
-    date: "Sep 2023",
-    category: "Cultural",
-    description: "C-Cube celebrated Engineer's Day with engaging activities and events, recognising the spirit of engineering among students.",
-    color: "from-emerald-400 to-cyan-400",
-    photos: [
-      "https://images.unsplash.com/photo-1540575467063-178aa50ab817?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1528459584353-5297db1a9c01?w=800&h=600&fit=crop",
-    ]
-  },
-  {
-    id: 11,
-    title: "Industrial Visit – CognaTech",
-    date: "Mar 2, 2024",
-    category: "Industrial Visit",
-    description: "Students visited CognaTech for an industrial exposure experience, gaining real-world insights into the tech industry.",
-    color: "from-blue-600 to-indigo-600",
-    photos: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop",
-    ]
-  },
-  {
-    id: 12,
-    title: "Cleanliness Drive",
-    date: "Sep 2023",
-    category: "Social",
-    description: "A campus cleanliness initiative organised by C-Cube to promote environmental awareness and a clean campus culture.",
-    color: "from-green-500 to-emerald-500",
-    photos: [
-      "https://images.unsplash.com/photo-1563245330-80126584f04c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1582408907338-706509168284?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1594498257602-0175c0dc1188?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=800&h=600&fit=crop",
-    ]
-  },
-  {
-    id: 13,
     title: "Remote Teaching",
     date: "2022",
     category: "Social",
@@ -212,22 +174,7 @@ const events: Event[] = [
     ]
   },
   {
-    id: 14,
-    title: "Remote Teaching",
-    date: "2023",
-    category: "Social",
-    description: "Continuing the tradition of community outreach, C-Cube students conducted teaching sessions at an underprivileged school in 2023.",
-    color: "from-sky-500 to-blue-500",
-    photos: [
-      "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
-    ]
-  },
-  {
-    id: 15,
+    id: 11,
     title: "Trekking & Cleanliness Drive",
     date: "Sep 15, 2023",
     category: "Social",
