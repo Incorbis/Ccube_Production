@@ -9,85 +9,83 @@ const facultyAdvisors = [
     role: "Faculty Advisor",
     dept: "Department of Computer Engineering",
     imgUrl: "",
-    linkedin: "#",
-    github: "#",
+  
   },
   {
     name: "Prof. Trupti Kherde",
     role: "Faculty Co-Advisor",
     dept: "Department of Computer Engineering",
     imgUrl: "",
-    linkedin: "#",
-    github: "#",
+   
   },
 ];
 
 const coreTeam = [
-  { name: "Aditya Divate", role: "President", dept: "", imgUrl: "", linkedin: "#", github: "#" },
-  { name: "Samruddhi Achari", role: "Joint President", dept: "", imgUrl: "", linkedin: "#", github: "#" },
-  { name: "Manjeet Kumar", role: "Secretary", dept: "", imgUrl: "", linkedin: "#", github: "#" },
-  { name: "Adit Patil", role: "Joint Secretary", dept: "", imgUrl: "", linkedin: "#", github: "#" },
-  { name: "Siddhi Patil", role: "Treasurer", dept: "", imgUrl: "", linkedin: "#", github: "#" },
-  { name: "Kanchan Garad", role: "Joint Treasurer", dept: "", imgUrl: "", linkedin: "#", github: "#" },
+  { name: "Aditya Divate", role: "President", dept: "", imgUrl: "" },
+  { name: "Samruddhi Achari", role: "Joint President", dept: "", imgUrl: "" },
+  { name: "Manjeet Kumar", role: "Secretary", dept: "", imgUrl: "" },
+  { name: "Adit Patil", role: "Joint Secretary", dept: "", imgUrl: "" },
+  { name: "Siddhi Patil", role: "Treasurer", dept: "", imgUrl: ""},
+  { name: "Kanchan Garad", role: "Joint Treasurer", dept: "", imgUrl: "" },
 ];
 
 const teams = [
   {
     label: "Technical Team",
     members: [
-      { name: "Swaroop Mane", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Esha Pansare", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Samiksha Ner", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Siddhi Pankhade", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Akash Patil", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Agam Kothari", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Krishna Kamurti", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Swaroop Mane", imgUrl: "" },
+      { name: "Esha Pansare", imgUrl: "" },
+      { name: "Samiksha Ner", imgUrl: ""},
+      { name: "Siddhi Pankhade", imgUrl: "" },
+      { name: "Akash Patil", imgUrl: ""},
+      { name: "Agam Kothari", imgUrl: "" },
+      { name: "Krishna Kamurti", imgUrl: ""},
     ],
   },
   {
     label: "Cultural Team",
     members: [
-      { name: "Hitakshi Kharag", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Purva Khedekar", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Ketaki Shivange", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Shravani Dinesh Joshi", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Ilakshi Bhosale", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Hitakshi Kharag", imgUrl: "" },
+      { name: "Purva Khedekar", imgUrl: "" },
+      { name: "Ketaki Shivange", imgUrl: "" },
+      { name: "Shravani Dinesh Joshi", imgUrl: "" },
+      { name: "Ilakshi Bhosale", imgUrl: ""},
     ],
   },
   {
     label: "Anchoring & Stage Committee",
     members: [
-      { name: "Shreya Kharade", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Arya Naik", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Bhumika Ladhani", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Parth Pramod Khade", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Devansh Sune", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Shreya Kharade", imgUrl: "" },
+      { name: "Arya Naik", imgUrl: "" },
+      { name: "Bhumika Ladhani", imgUrl: ""},
+      { name: "Parth Pramod Khade", imgUrl: "" },
+      { name: "Devansh Sune", imgUrl: "" },
     ],
   },
   {
     label: "Branding Team",
     members: [
-      { name: "Vijaylaxmi Katke", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Prajwal Ingale", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Swati Gaikwad", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Shravani Joshi", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Kaustubh Bag", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Rahul Mane", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Vijaylaxmi Katke", imgUrl: "" },
+      { name: "Prajwal Ingale", imgUrl: "" },
+      { name: "Swati Gaikwad", imgUrl: ""},
+      { name: "Shravani Joshi", imgUrl: "" },
+      { name: "Kaustubh Bag", imgUrl: "" },
+      { name: "Rahul Mane", imgUrl: "" },
     ],
   },
   {
     label: "Photography & Discipline Committee",
     members: [
-      { name: "Dhanshri Bendre", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Vaishavi Yadav", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Apurv Patil", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Dhanshri Bendre", imgUrl: "" },
+      { name: "Vaishavi Yadav", imgUrl: "" },
+      { name: "Apurv Patil", imgUrl: "" },
     ],
   },
   {
     label: "Report Writing",
     members: [
-      { name: "Neha Takare", imgUrl: "", linkedin: "#", github: "#" },
-      { name: "Gauri Jadhav", imgUrl: "", linkedin: "#", github: "#" },
+      { name: "Neha Takare", imgUrl: "" },
+      { name: "Gauri Jadhav", imgUrl: "" },
     ],
   },
 ];
@@ -109,10 +107,10 @@ interface MemberCardProps {
   delay: number;
 }
 
-const MemberCard = ({ name, role, dept, imgUrl, linkedin = "#", github = "#", delay }: MemberCardProps) => (
+const MemberCard = ({ name, role, dept, imgUrl, delay }: MemberCardProps) => (
   <ScrollReveal delay={delay}>
     
-    <div className="glass-card p-6 text-center group transition-all duration-300 h-full flex flex-col min-h-[280px]">
+    <div className="glass-card p-6 text-center group transition-all duration-300 h-full flex flex-col min-h-[200px]">
       {/* Avatar */}
       <div className="w-20 h-20 rounded-2xl mx-auto mb-4 overflow-hidden flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
         {imgUrl ? (
@@ -135,26 +133,7 @@ const MemberCard = ({ name, role, dept, imgUrl, linkedin = "#", github = "#", de
           <p className="text-primary text-xs font-mono mt-1">{role}</p>
           {dept && <p className="text-xs text-muted-foreground mt-1">{dept}</p>}
         </div>
-
-        {/* Social links */}
-        <div className="flex justify-center gap-2 mt-5">
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 active:scale-95"
-          >
-            <Linkedin className="w-3.5 h-3.5" />
-          </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 active:scale-95"
-          >
-            <Github className="w-3.5 h-3.5" />
-          </a>
-        </div>
+       
       </div>
     </div>
   </ScrollReveal>
@@ -183,8 +162,6 @@ const Team = () => (
                 role={m.role}
                 dept={m.dept}
                 imgUrl={m.imgUrl}
-                linkedin={m.linkedin}
-                github={m.github}
                 delay={i * 0.08}
               />
             ))}
@@ -204,8 +181,7 @@ const Team = () => (
                 role={m.role}
                 dept={m.dept}
                 imgUrl={m.imgUrl}
-                linkedin={m.linkedin}
-                github={m.github}
+
                 delay={i * 0.06}
               />
             ))}
@@ -232,8 +208,6 @@ const Team = () => (
                   name={member.name}
                   role={team.label}
                   imgUrl={member.imgUrl}
-                  linkedin={member.linkedin}
-                  github={member.github}
                   delay={i * 0.06 + ti * 0.02}
                 />
               ))}
