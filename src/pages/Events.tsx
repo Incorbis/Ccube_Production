@@ -107,14 +107,6 @@ const allEvents: EventType[] = [
     image: img9,
   },
   {
-    title: "Industrial Visit – CognaTech",
-    date: "Mar 2, 2024",
-    location: "CognaTech, Narhe, Pune",
-    category: "Industrial Visit",
-    description: "Students visited CognaTech for an industrial exposure experience, gaining real-world insights into the tech industry.",
-    image: "",
-  },
-  {
     title: "Cleanliness Drive",
     date: "Sep 2023",
     location: "On Campus",
@@ -122,22 +114,8 @@ const allEvents: EventType[] = [
     description: "A campus cleanliness initiative organised by C-Cube to promote environmental awareness and a clean campus culture.",
     image: img11,
   },
-  {
-    title: "Remote Teaching",
-    date: "2022",
-    location: "Remote Village School",
-    category: "Social",
-    description: "C-Cube students volunteered to teach at a remote primary school, bridging the educational gap and giving back to the community.",
-    image: "",
-  },
-  {
-    title: "Remote Teaching",
-    date: "2023",
-    location: "Remote Village School",
-    category: "Social",
-    description: "Continuing the tradition of community outreach, C-Cube students conducted teaching sessions at an underprivileged school in 2023.",
-    image: "",
-  },
+
+  
   {
     title: "Trekking & Cleanliness Drive",
     date: "Sep 15, 2023",

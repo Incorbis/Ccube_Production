@@ -8,14 +8,14 @@ const facultyAdvisors = [
     name: "Dr. Minal Bodke ",
     role: "Faculty Advisor",
     dept: "Department of Computer Engineering",
-    imgUrl: "",
+    imgUrl: "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
   
   },
   {
     name: "Prof. Trupti Kherde",
     role: "Faculty Co-Advisor",
     dept: "Department of Computer Engineering",
-    imgUrl: "",
+    imgUrl: "https://www.pccoer.com/computer/images/Teach/trupti.png",
    
   },
 ];

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera } from "lucide-react";
+import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera, BookOpen, Sparkles} from "lucide-react";
 import { motion } from "framer-motion";
 import Ballpit from "@/components/ui/Ballbit";
 import CubeModel from "../components/Cubemodel"; // adjust path
@@ -13,17 +13,44 @@ const stats = [
   { icon: Trophy, value: "12", label: "Awards Won" },
   { icon: Zap, value: "4", label: "Years Running" },
 ];
+// Faculty Advisors Data
+const facultyAdvisors = [
+  {
+    name: "Dr. Minal Bodke",
+    role: "Faculty Advisor",
+    dept: "Department of Computer Engineering",
+    imgUrl: "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
+  },
+  {
+    name: "Prof. Trupti Kherde",
+    role: "Faculty Co-Advisor",
+    dept: "Department of Computer Engineering",
+    imgUrl: "https://www.pccoer.com/computer/images/Teach/trupti.png",
+  },
+];
 
 const events = [
-  { title: "PixelHack 2026", date: "Apr 12, 2026", category: "Hackathon", description: "48-hour design + code hackathon with industry mentors and ₹50K prize pool." },
-  { title: "UI/UX Masterclass", date: "Apr 20, 2026", category: "Workshop", description: "Hands-on Figma workshop with a senior product designer from a leading startup." },
-  { title: "Portfolio Review Night", date: "May 3, 2026", category: "Meetup", description: "Get your portfolio reviewed by working professionals and alumni." },
+  { title: "SE Induction and Fresher's 2K25", date: "Jul 22, 2025", category: "Cultural", description: "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.", icon: Users },
+  { title: "SPOS Expert Session", date: "Aug 8, 2025", category: "Expert Session", description: "An expert session on System Programming and Operating Systems (SPOS) aimed at TE students to deepen their understanding of core CS concepts.", icon: BookOpen },
+  { title: "C Cube Activity (Engineer's Day)", date: "Sep 12, 2025", category: "Technical", description: "A technical celebration event for Engineer's Day, encouraging students to showcase their innovative ideas and engineering spirit.", icon: Code },
+  { title: "CDAC Visit", date: "Dec 28, 2024", category: "Industrial Visit", description: "TE students visited CDAC gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.", icon: Camera },
+  { title: "Cleaning Camp at Lohagad", date: "Feb 26, 2025", category: "Social", description: "TE students organised a cleanliness drive at the historic Lohagad Fort to combat environmental degradation, promoting eco-friendly tourism and social responsibility.", icon: Sparkles },
 ];
 
 const categoryColors: Record<string, string> = {
-  Hackathon: "bg-primary/15 text-primary",
-  Workshop: "bg-accent/15 text-accent",
-  Meetup: "bg-emerald-500/15 text-emerald-600",
+  Cultural: "bg-purple-500/15 text-purple-600",
+  "Expert Session": "bg-blue-500/15 text-blue-600",
+  Technical: "bg-orange-500/15 text-orange-600",
+  "Industrial Visit": "bg-cyan-500/15 text-cyan-600",
+  Social: "bg-emerald-500/15 text-emerald-600",
+};
+
+const categoryGradients: Record<string, string> = {
+  Cultural: "from-purple-500/10 to-pink-500/10",
+  "Expert Session": "from-blue-500/10 to-indigo-500/10",
+  Technical: "from-orange-500/10 to-amber-500/10",
+  "Industrial Visit": "from-cyan-500/10 to-blue-500/10",
+  Social: "from-emerald-500/10 to-green-500/10",
 };
 
 const Index = () => (
@@ -149,10 +176,22 @@ const Index = () => (
         <SectionHeading label="What We Do" title="Craft, Create, Collaborate" description="From hackathons to design jams, we build skills that matter." />
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { icon: Code, title: "Development", desc: "Build real-world projects with modern web technologies, from React apps to full-stack platforms." },
-            { icon: Palette, title: "Design", desc: "Master UI/UX design thinking, Figma workflows, and visual storytelling for digital products." },
-            { icon: Camera, title: "Creative Media", desc: "Explore motion graphics, photography, and content creation for brands and campaigns." },
-          ].map((item, i) => (
+  {
+    icon: Users,
+    title: "Community Service",
+    desc: "We actively engage in social work, supporting rural communities through education, awareness drives, and meaningful initiatives that create real impact."
+  },
+  {
+    icon: BookOpen,
+    title: "Rural Education",
+    desc: "Empowering students in rural areas by teaching essential skills, spreading knowledge, and guiding them towards better opportunities and brighter futures."
+  },
+  {
+    icon: Sparkles,
+    title: "Events & Initiatives",
+    desc: "Organizing impactful events like Engineers Day, Teachers Day, Women's Day, cleanliness drives, and annual functions to inspire, celebrate, and bring communities together."
+  }
+].map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.1}>
               <div className="glass-card p-8 group transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-105">
@@ -171,42 +210,97 @@ const Index = () => (
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
         <SectionHeading label="Upcoming" title="Featured Events" description="Mark your calendars — here's what's coming up next." />
-        <div className="grid md:grid-cols-3 gap-6">
-          {events.map((e, i) => (
-            <ScrollReveal key={e.title} delay={i * 0.1}>
-              <div className="glass-card p-6 flex flex-col h-full group transition-all duration-300">
-                <div className="flex items-center justify-between mb-4">
-                  <span className={`text-xs font-mono px-3 py-1 rounded-full ${categoryColors[e.category]}`}>{e.category}</span>
-                  <span className="text-xs text-muted-foreground font-mono">{e.date}</span>
+        
+        {/* Carousel Layout */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: [0, -1200] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            whileHover={{ animationPlayState: "paused" }}
+          >
+            {[...events, ...events].map((e, i) => (
+              <motion.div
+                key={`${e.title}-${i}`}
+                className={`glass-card p-6 w-80 flex-shrink-0 group transition-all duration-500 hover:scale-105 hover:shadow-2xl bg-gradient-to-br ${categoryGradients[e.category]}`}
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-22 h-12 rounded-xl bg-gradient-to-br ${categoryGradients[e.category]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    <e.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`text-xs font-mono px-3 py-1 rounded-full ${categoryColors[e.category]} font-semibold`}>{e.category}</span>
+                      <span className="text-sm text-muted-foreground font-mono flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {e.date}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{e.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{e.description}</p>
+                    <Link to="/gallery" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all group-hover:text-accent">
+                      View Gallery <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{e.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{e.description}</p>
-                <Link to="/events" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-2.5 transition-all">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </ScrollReveal>
-          ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        <ScrollReveal>
-          <div className="glass-card glow-border p-12 md:p-16 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/6 rounded-full blur-[80px]" />
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 relative">Ready to build something great?</h2>
-            <p className="text-muted-foreground text-lg max-w-md mx-auto mb-8 relative">Join 120+ students who are shaping the future of digital creativity at our college.</p>
-            <div className="flex flex-wrap gap-4 justify-center relative">
-              <Link to="/join"><Button variant="hero" size="lg">Become a Member</Button></Link>
-              <Link to="/contact"><Button variant="hero-outline" size="lg">Get in Touch</Button></Link>
+<div className="section-padding">
+  <div className="max-w-5xl mx-auto text-center">
+
+    {/* Heading */}
+    <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      Faculty Advisors
+    </h2>
+    <p className="text-muted-foreground text-sm mb-10">
+      Guiding our mission of social impact, education, and community service
+    </p>
+
+    {/* Cards */}
+    <div className="grid sm:grid-cols-2 gap-8">
+      {facultyAdvisors.map((m, i) => (
+        <ScrollReveal key={m.name} delay={i * 0.1}>
+          
+          <div className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
+            {/* Glow Effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+            {/* Avatar */}
+            <div className="relative z-10 w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:scale-105 transition">
+              {m.imgUrl ? (
+                <img src={m.imgUrl} alt={m.name} className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/30 to-accent/20 text-xl font-bold text-primary">
+                  {m.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                </div>
+              )}
             </div>
+
+            {/* Info */}
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg font-semibold">{m.name}</h3>
+              <p className="text-primary text-sm font-medium mt-1">{m.role}</p>
+              <p className="text-xs text-muted-foreground mt-1">{m.dept}</p>
+            </div>
+
+           
+
           </div>
+
         </ScrollReveal>
-      </div>
-    </section>
+      ))}
+    </div>
+
+  </div>
+</div>
 
   </div>
 );
