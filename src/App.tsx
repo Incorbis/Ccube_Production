@@ -10,7 +10,7 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
-import Join from "./pages/Join";
+
 import NotFound from "./pages/NotFound";
 import SmoothCursor from "./components/magicui/SmoothCursor";
 import Gallery from "./pages/Gallery";
@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/join" element={<Join />} />
+          
           <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

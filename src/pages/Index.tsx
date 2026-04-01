@@ -106,9 +106,8 @@ const Index = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              Where pixels
-              <br />
-              meet <span className="gradient-text">purpose</span>
+              Lead the 
+             <span className="gradient-text"> Change</span><br></br>Serve the <span className="gradient-text">Society.</span>
             </motion.h1>
 
             <motion.p
@@ -117,7 +116,7 @@ const Index = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
-              PixelCraft is a community of designers, developers, and creators at the intersection of art and technology.
+       We learn by serving — empowering communities through rural education, cleanliness drives, and impactful social initiatives.
             </motion.p>
 
             <motion.div
@@ -126,13 +125,10 @@ const Index = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link to="/join">
-                <Button variant="hero" size="xl">
-                  Join Now <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
               <Link to="/events">
-                <Button variant="hero-outline" size="xl">Explore Events</Button>
+                <Button variant="hero" size="xl">
+                Explore Events <ArrowRight className="w-5 h-5" />
+                </Button>
               </Link>
             </motion.div>
 
