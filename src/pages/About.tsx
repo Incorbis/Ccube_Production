@@ -124,41 +124,7 @@ const About = () => (
       </div>
     </section>
 
-    {/* Vision & Mission - Side by Side */}
-    <section className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        <SectionHeading label="Vision & Mission" title="Our purpose and path forward" />
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Vision */}
-          <ScrollReveal>
-            <div className="glass-card p-8 h-full">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed text-base">
-              To provide students opportunities for holistic growth through extracurricular and co-curricular activities so that they can sail through their years in the department.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Mission */}
-          <ScrollReveal delay={0.1}>
-            <div className="glass-card p-8 h-full">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Our Mission</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
- To engage students in active co-curricular learning.<br></br>
-To provide holistic learning experiences for all students.<br></br>
-To build supportive and inclusive student communities.<br></br>
-To develop soft skills in preparation for graduation and lifelong success.
-                  </p>
-                </div>
-                
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
-    </section>
+    
 
     {/* Core Values - Redesigned with 6 items in 3x2 grid */}
     <section className="section-padding">
