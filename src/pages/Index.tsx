@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera, BookOpen, Sparkles} from "lucide-react";
+import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera, BookOpen, Sparkles, Target, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import Ballpit from "@/components/ui/Ballbit";
-import CubeModel from "../components/Cubemodel"; // adjust path
+
 
 const stats = [
   { icon: Users, value: "120+", label: "Active Members" },
@@ -157,15 +157,318 @@ const Index = () => (
 
     </div>
 
+    {/* Vision & Mission */}
+   <section className="section-padding relative z-10 overflow-hidden">
+  <div className="max-w-7xl mx-auto">
+    <SectionHeading label="Our Purpose" title="Vision & Mission" description="Driving holistic growth and empowering the student community." />
+    
+    <div className="relative">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
 
+      {/* Central Animated Divider */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block">
+        {/* Gradient Line */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+        
+        {/* Animated Dots flowing along the line */}
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(var(--primary),0.8)]"
+            style={{ left: '-4px' }}
+            animate={{
+              top: ['0%', '100%'],
+              opacity: [0, 1, 1, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 0.6,
+              ease: 'linear',
+            }}
+          />
+        ))}
 
- <div className="w-full min-h-screen bg-white">
-        <div className="w-full md:w-[100%] h-[500px]">
-          <CubeModel />
+        {/* Central Icon Badge */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary via-accent to-primary bg-[length:200%_200%] animate-gradient-shift flex items-center justify-center border-4 border-background shadow-2xl">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          >
+            <Sparkles className="w-7 h-7 text-white" />
+          </motion.div>
         </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-16 md:gap-24 relative">
+
+        {/* Vision - Left Side */}
+        <ScrollReveal delay={0.1}>
+          <div className="relative group flex flex-col">
+            {/* Floating particles around the card */}
+            <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 rounded-full bg-primary"
+                  style={{
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.3, 1, 0.3],
+                  }}
+                  transition={{
+                    duration: 2 + Math.random(),
+                    repeat: Infinity,
+                    delay: i * 0.2,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Main Card */}
+            <div className="relative glass-card p-10 transition-all duration-500 hover:shadow-[0_20px_60px_hsl(var(--primary)/0.15)] overflow-hidden">
+              {/* Animated Border Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                {/* Animated Icon Container */}
+                <div className="relative mb-8 inline-block">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center border border-primary/20 shadow-lg backdrop-blur-sm group-hover:border-primary/40 transition-all duration-700">
+                    <motion.div 
+                      animate={{ 
+                        y: [0, -8, 0],
+                        scale: [1, 1.05, 1],
+                      }} 
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 3, 
+                        ease: "easeInOut" 
+                      }}
+                    >
+                      <Target className="w-9 h-9 text-primary drop-shadow-lg" />
+                    </motion.div>
+                  </div>
+                  
+                  {/* Orbiting Ring */}
+                  <motion.div
+                    className="absolute inset-0 border-2 border-primary/20 rounded-2xl"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                    style={{ transformOrigin: 'center' }}
+                  />
+                </div>
+                
+                <div className="flex items-center gap-3 mb-6">
+                  <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent">
+                    Vision
+                  </h3>
+                  <motion.div
+                    className="w-12 h-0.5 bg-gradient-to-r from-primary to-transparent"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 48 }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                  />
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    "To provide students opportunities for holistic growth through extracurricular & co-curricular activities so that they can sail through their years in the department."
+                  ].map((text, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="relative p-5 rounded-2xl bg-gradient-to-br from-primary/5 via-primary/3 to-transparent border border-primary/10 group-hover:border-primary/20 backdrop-blur-sm transition-all duration-500"
+                      whileHover={{ x: 4 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <motion.div 
+                          className="w-3 h-3 rounded-full bg-gradient-to-br from-primary to-accent mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--primary),0.7)]"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">
+                          {text}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* 🔥 Bottom Branding Section — fills space below Vision card */}
+            <div className="mt-8 flex flex-col items-center justify-center text-center relative">
+              {/* Glow Background */}
+              <div className="absolute inset-0 flex justify-center">
+                <div className="w-96 h-40 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-3xl opacity-60" />
+              </div>
+              {/* Logos */}
+              <div className="relative flex items-center gap-6 mb-6">
+                
+                <motion.img
+                  src="/leftlogo.png"
+                  alt="Left Logo"
+                  className="w-36 h-36 object-contain drop-shadow-xl"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
+                <motion.img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="w-36 h-36 object-contain drop-shadow-xl"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
+                <motion.img
+                  src="/rightlogo.png"
+                  alt="Right Logo"
+                  className="w-36 h-36 object-contain drop-shadow-xl"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
+              </div>
+              {/* Department Text */}
+              <motion.h4
+                className="text-2xl md:text-3xl font-semibold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Department of Computer Engineering
+              </motion.h4>
+              {/* Underline animation */}
+              <motion.div
+                className="mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent"
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                transition={{ duration: 1 }}
+              />
+            </div>
+
+          </div>
+        </ScrollReveal>
+
+        {/* Mission - Right Side */}
+        <ScrollReveal delay={0.2}>
+          <div className="relative group">
+            {/* Floating particles around the card */}
+            <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 rounded-full bg-accent"
+                  style={{
+                    top: `${Math.random() * 100}%`,
+                    right: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.3, 1, 0.3],
+                  }}
+                  transition={{
+                    duration: 2 + Math.random(),
+                    repeat: Infinity,
+                    delay: i * 0.2,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Main Card */}
+            <div className="relative glass-card p-10 h-full transition-all duration-500 hover:shadow-[0_20px_60px_hsl(var(--accent)/0.15)] overflow-hidden">
+              {/* Animated Border Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-bl from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              {/* Corner Accent */}
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-bl from-accent/10 to-transparent rounded-br-full opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                {/* Animated Icon Container */}
+                <div className="relative mb-8 inline-block">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/10 flex items-center justify-center border border-accent/20 shadow-lg backdrop-blur-sm group-hover:border-accent/40 transition-all duration-700">
+                    <motion.div 
+                      animate={{ 
+                        y: [0, -8, 0],
+                        scale: [1, 1.05, 1],
+                      }} 
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 3, 
+                        ease: "easeInOut",
+                        delay: 1.5 
+                      }}
+                    >
+                      <Rocket className="w-9 h-9 text-accent drop-shadow-lg" />
+                    </motion.div>
+                  </div>
+                  
+                  {/* Orbiting Ring */}
+                  <motion.div
+                    className="absolute inset-0 border-2 border-accent/20 rounded-2xl"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                    style={{ transformOrigin: 'center' }}
+                  />
+                </div>
+                
+                <div className="flex items-center gap-3 mb-6">
+                  <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent to-primary">
+                    Mission
+                  </h3>
+                  <motion.div
+                    className="w-12 h-0.5 bg-gradient-to-r from-accent to-transparent"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 48 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    "To engage students in active co-curricular learning.",
+                    "To Provide holistic learning experiences for all students.",
+                    "To build supportive and inclusive student communities.",
+                    "To develop soft skills in preparation for graduation and lifelong success."
+                  ].map((text, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="relative p-5 rounded-2xl bg-gradient-to-bl from-accent/5 via-accent/3 to-transparent border border-accent/10 group-hover:border-accent/20 backdrop-blur-sm transition-all duration-500"
+                      whileHover={{ x: -4 }}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 + 0.3 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <motion.div 
+                          className="w-3 h-3 rounded-full bg-gradient-to-br from-accent to-primary mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--accent),0.7)]"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+                        />
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">
+                          {text}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
+      </div>
     </div>
-
-
+  </div>
+</section>
     {/* What we do */}
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
