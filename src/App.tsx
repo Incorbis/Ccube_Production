@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
+import { useState, useEffect } from "react";
 
 import NotFound from "./pages/NotFound";
 import SmoothCursor from "./components/magicui/SmoothCursor";
@@ -16,10 +17,24 @@ import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+     useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
+  return(
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <SmoothCursor />
+        {!isMobile && <SmoothCursor />}
       <Toaster />
       
       <BrowserRouter>
@@ -37,6 +52,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  )
+};
 
 export default App;
