@@ -311,31 +311,34 @@ const Index = () => (
               <div className="absolute inset-0 flex justify-center">
                 <div className="w-96 h-40 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-3xl opacity-60" />
               </div>
-              {/* Logos */}
-              <div className="relative flex items-center gap-6 mb-6">
-                
-                <motion.img
-                  src="/leftlogo.png"
-                  alt="Left Logo"
-                  className="w-36 h-36 object-contain drop-shadow-xl"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                />
-                <motion.img
-                  src="/logo.png"
-                  alt="Logo"
-                  className="w-36 h-36 object-contain drop-shadow-xl"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                />
-                <motion.img
-                  src="/rightlogo.png"
-                  alt="Right Logo"
-                  className="w-36 h-36 object-contain drop-shadow-xl"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                />
-              </div>
+{/* Logos */}
+<div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10 mb-6 flex-nowrap">
+
+  <motion.img
+    src="/leftlogo.png"
+    alt="Left Logo"
+    className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+    whileHover={{ scale: 1.1, rotate: -5 }}
+    transition={{ type: "spring", stiffness: 200 }}
+  />
+
+  <motion.img
+    src="/logo.png"
+    alt="Logo"
+    className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+    whileHover={{ scale: 1.1, rotate: 5 }}
+    transition={{ type: "spring", stiffness: 200 }}
+  />
+
+  <motion.img
+    src="/rightlogo.png"
+    alt="Right Logo"
+    className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+    whileHover={{ scale: 1.1, rotate: -5 }}
+    transition={{ type: "spring", stiffness: 200 }}
+  />
+
+</div>
               {/* Department Text */}
               <motion.h4
                 className="text-2xl md:text-3xl font-semibold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary"
