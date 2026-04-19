@@ -188,32 +188,21 @@ const Team = () => (
           </div>
         </div>
 
-        {/* Sub-teams */}
-        {teams.map((team, ti) => (
-          <div key={team.label}>
-            <h2 className="text-lg font-semibold mb-2 text-center tracking-wide uppercase text-muted-foreground">
-              {team.label}
+         {/* Our Team Section */}
+          <div>
+            <h2 className="text-lg font-semibold mb-6 text-center tracking-wide uppercase text-muted-foreground">
+              Our Team
             </h2>
-            {roleHints[team.label] ? (
-              <p className="text-xs text-center text-muted-foreground mb-6 font-mono">
-                {roleHints[team.label]}
-              </p>
-            ) : (
-              <div className="mb-6" />
-            )}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.members.map((member, i) => (
-                <MemberCard
-                  key={member.name}
-                  name={member.name}
-                  role={team.label}
-                  imgUrl={member.imgUrl}
-                  delay={i * 0.06 + ti * 0.02}
+            <div className="flex justify-center">
+              <div className="w-full max-w-4xl h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img
+                  src="https://media.istockphoto.com/id/1321029825/photo/portrait-of-business-team.jpg?s=612x612&w=0&k=20&c=r_mjz8nYxz7LyqL1zByr5iYxcnV48dzYwyXcXHyeE4k="
+                  alt="Our Team"
+                  className="w-full h-full object-cover"
                 />
-              ))}
+              </div>
             </div>
           </div>
-        ))}
       </div>
     </section>
   </div>
