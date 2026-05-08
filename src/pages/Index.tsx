@@ -2,7 +2,20 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
-import { ArrowRight, Calendar, Trophy, Users, Zap, Code, Palette, Camera, BookOpen, Sparkles, Target, Rocket } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Trophy,
+  Users,
+  Zap,
+  Code,
+  Palette,
+  Camera,
+  BookOpen,
+  Sparkles,
+  Target,
+  Rocket,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
@@ -17,7 +30,8 @@ const facultyAdvisors = [
     name: "Dr. Minal Bodke",
     role: "Faculty Advisor",
     dept: "Department of Computer Engineering",
-    imgUrl: "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
+    imgUrl:
+      "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
   },
   {
     name: "Prof. Trupti Kherde",
@@ -28,11 +42,46 @@ const facultyAdvisors = [
 ];
 
 const events = [
-  { title: "SE Induction and Fresher's 2K25", date: "Jul 22, 2025", category: "Cultural", description: "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.", icon: Users },
-  { title: "SPOS Expert Session", date: "Aug 8, 2025", category: "Expert Session", description: "An expert session on System Programming and Operating Systems (SPOS) aimed at TE students to deepen their understanding of core CS concepts.", icon: BookOpen },
-  { title: "C Cube Activity (Engineer's Day)", date: "Sep 12, 2025", category: "Technical", description: "A technical celebration event for Engineer's Day, encouraging students to showcase their innovative ideas and engineering spirit.", icon: Code },
-  { title: "CDAC Visit", date: "Dec 28, 2024", category: "Industrial Visit", description: "TE students visited CDAC gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.", icon: Camera },
-  { title: "Cleaning Camp at Lohagad", date: "Feb 26, 2025", category: "Social", description: "TE students organised a cleanliness drive at the historic Lohagad Fort to combat environmental degradation, promoting eco-friendly tourism and social responsibility.", icon: Sparkles },
+  {
+    title: "SE Induction and Fresher's 2K25",
+    date: "Jul 22, 2025",
+    category: "Cultural",
+    description:
+      "A warm welcome event for newly joined SE students, featuring introductions to the department, club activities, and an exciting fresher's celebration.",
+    icon: Users,
+  },
+  {
+    title: "SPOS Expert Session",
+    date: "Aug 8, 2025",
+    category: "Expert Session",
+    description:
+      "An expert session on System Programming and Operating Systems (SPOS) aimed at TE students to deepen their understanding of core CS concepts.",
+    icon: BookOpen,
+  },
+  {
+    title: "C Cube Activity (Engineer's Day)",
+    date: "Sep 12, 2025",
+    category: "Technical",
+    description:
+      "A technical celebration event for Engineer's Day, encouraging students to showcase their innovative ideas and engineering spirit.",
+    icon: Code,
+  },
+  {
+    title: "CDAC Visit",
+    date: "Dec 28, 2024",
+    category: "Industrial Visit",
+    description:
+      "TE students visited CDAC gaining insights into high-performance computing, cybersecurity, AI, embedded systems, IoT, and real-world technology applications.",
+    icon: Camera,
+  },
+  {
+    title: "Cleaning Camp at Lohagad",
+    date: "Feb 26, 2025",
+    category: "Social",
+    description:
+      "TE students organised a cleanliness drive at the historic Lohagad Fort to combat environmental degradation, promoting eco-friendly tourism and social responsibility.",
+    icon: Sparkles,
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -53,168 +102,120 @@ const categoryGradients: Record<string, string> = {
 
 const Index = () => (
   <div className="min-h-screen">
-
-    {/* ── Hero ──────────────────────────────────────────────────────── */}
-    <div style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden" }}>
-
-      {/* Z=1 · Scrim */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none" }} />
-
-      {/* Z=2 · Glow blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse-glow" style={{ zIndex: 2, pointerEvents: "none" }} />
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ zIndex: 2, animationDelay: "1.5s", pointerEvents: "none" }} />
-
-      {/* Z=3 · Hero content */}
-      <div
-        className="section-padding pt-20"
-        style={{ position: "relative", zIndex: 3, minHeight: "100vh", display: "flex", alignItems: "center" }}
-      >
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="flex flex-col items-center text-center">
-
-            {/* ── Logos row ── */}
-            <motion.div
-              className="flex items-center justify-center gap-8 mb-6"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <img src="/leftlogo.png" alt="PCCOE Logo" className="w-16 h-16 object-contain rounded-xl flex-shrink-0" />
-              <img src="/rightlogo.png" alt="Affiliation Logo" className="w-16 h-16 object-contain rounded-xl flex-shrink-0" />
-            </motion.div>
-
-            {/* ── College name — BIG & CENTERED ── */}
-            <motion.div
-              className="mb-3 text-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <p className="text-xs font-mono tracking-[0.3em] text-muted-foreground uppercase mb-2">
-                PCET's
-              </p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight gradient-text">
-                Pimpri Chinchwad College of<br />Engineering & Research
-              </h2>
-            </motion.div>
-
-            {/* ── Department + Presents ── */}
-            <motion.div
-              className="mb-10 text-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
-            >
-              <p className="text-base font-semibold text-muted-foreground tracking-wide">
-                Department of Computer Engineering
-              </p>
-              <p className="text-xs font-mono tracking-[0.35em] text-muted-foreground/60 uppercase mt-1">
-                Presents
-              </p>
-            </motion.div>
-
-            {/* ── Recruiting pill ── */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-mono tracking-wide text-primary">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                Now recruiting for 2026-27
-              </span>
-            </motion.div>
-
-            {/* ── Club logo + Hero Headline ── */}
-            <motion.div
-              className="flex flex-col items-center gap-4 mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <img
-                src="/logo.png"
-                alt="C Cube Logo"
-                className="w-24 h-24 object-contain drop-shadow-xl"
-              />
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
-                Lead the <span className="gradient-text">Change</span><br />
-                Serve the <span className="gradient-text">Society.</span>
-              </h1>
-            </motion.div>
-
-            {/* ── C Cube name + tagline ── */}
-            <motion.div
-              className="mb-8 text-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.42 }}
-            >
-              <p className="text-2xl md:text-3xl font-bold gradient-text tracking-tight">
-                C Cube
-              </p>
-              <p className="text-xs md:text-sm text-muted-foreground font-mono tracking-widest uppercase mt-1">
-                Computer Consort Consortium
-              </p>
-            </motion.div>
-
-            {/* ── Subheading ── */}
-            <motion.p
-              className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.48, ease: [0.16, 1, 0.3, 1] }}
-            >
-              We learn by serving — empowering communities through rural education, cleanliness drives, and impactful social initiatives.
-            </motion.p>
-
-            {/* ── CTA Button ── */}
-            <motion.div
-              className="flex flex-wrap justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Link to="/events">
-                <Button variant="hero" size="xl">
-                  Explore Events <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </motion.div>
-
-          </div>
-        </div>
+   
+   <div className="relative z-10 w-full  px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen">
+  {/* Centered content */}
+  <div className="flex flex-col items-center text-center space-y-6 w-full">
+    {/* College name and logos (condensed) */}
+    <motion.div
+      className="relative w-full flex justify-center"  // Changed to `justify-center`
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+    >
+      {/* Logos: Left and Right (hidden on mobile) */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 pl-8 sm:pl-16 hidden sm:block">
+        <img
+          src="/leftlogo.jpg"
+          alt="PCCOE Logo"
+          className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-xl"
+        />
+      </div>
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pr-8 sm:pr-16 hidden sm:block">
+        <img
+          src="/rightlogo.png"
+          alt="Affiliation Logo"
+          className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-xl"
+        />
       </div>
 
-      {/* Stats row */}
-      <section className="section-padding py-16" style={{ position: "relative", zIndex: 3 }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 0.08}>
-                <div className="glass-card p-6 text-center group transition-all duration-300">
-                  <s.icon className="w-5 h-5 text-primary mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" />
-                  <div className="text-3xl font-bold font-mono tracking-tight">{s.value}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Centered Text */}
+      <div className="text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight gradient-text">
+          PCET's Pimpri Chinchwad College of Engineering
+        </h2>
+        <p className="text-sm sm:text-base font-semibold text-muted-foreground tracking-wide mt-2">
+          Department of Computer Engineering
+        </p>
+      </div>
+    </motion.div>
 
-    </div>
+    {/* Club logo + Hero Headline */}
+    <motion.div
+      className="flex flex-col items-center gap-4 mb-6"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.7,
+        delay: 0.2,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
+      <img
+        src="/logo.png"
+        alt="C Cube Logo"
+        className="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-xl"
+      />
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95] text-center">
+        Lead the <span className="gradient-text">Change</span>
+        <br />
+        Serve the <span className="gradient-text">Society.</span>
+      </h1>
+    </motion.div>
+
+    {/* Club name + short tagline */}
+    <motion.div
+      className="mb-8 text-center"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <p className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text tracking-tight">
+        C Cube
+      </p>
+      <p className="text-xs sm:text-sm text-muted-foreground font-mono tracking-widest uppercase mt-1">
+        Empowering Communities
+      </p>
+    </motion.div>
+
+    {/* CTA Button */}
+    <motion.div
+      className="flex flex-wrap justify-center gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: 0.4,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
+      <Link to="/events">
+        <Button variant="hero" size="xl">
+          Explore Events <ArrowRight className="w-5 h-5" />
+        </Button>
+      </Link>
+    </motion.div>
+  </div>
+</div>
+    
+ 
 
     {/* Vision & Mission */}
     <section className="section-padding relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading label="Our Purpose" title="Vision & Mission" description="Driving holistic growth and empowering the student community." />
+        <SectionHeading
+          label="Our Purpose"
+          title="Vision & Mission"
+          description="Driving holistic growth and empowering the student community."
+        />
 
         <div className="relative">
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <div
+              className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            />
           </div>
 
           <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block">
@@ -223,20 +224,27 @@ const Index = () => (
               <motion.div
                 key={i}
                 className="absolute w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(var(--primary),0.8)]"
-                style={{ left: '-4px' }}
-                animate={{ top: ['0%', '100%'], opacity: [0, 1, 1, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: i * 0.6, ease: 'linear' }}
+                style={{ left: "-4px" }}
+                animate={{ top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.6,
+                  ease: "linear",
+                }}
               />
             ))}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary via-accent to-primary bg-[length:200%_200%] animate-gradient-shift flex items-center justify-center border-4 border-background shadow-2xl">
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
                 <Sparkles className="w-7 h-7 text-white" />
               </motion.div>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 relative">
-
             {/* Vision */}
             <ScrollReveal delay={0.1}>
               <div className="relative group flex flex-col">
@@ -245,9 +253,16 @@ const Index = () => (
                     <motion.div
                       key={i}
                       className="absolute w-1 h-1 rounded-full bg-primary"
-                      style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` }}
+                      style={{
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                      }}
                       animate={{ y: [0, -20, 0], opacity: [0.3, 1, 0.3] }}
-                      transition={{ duration: 2 + Math.random(), repeat: Infinity, delay: i * 0.2 }}
+                      transition={{
+                        duration: 2 + Math.random(),
+                        repeat: Infinity,
+                        delay: i * 0.2,
+                      }}
                     />
                   ))}
                 </div>
@@ -259,24 +274,59 @@ const Index = () => (
                   <div className="relative z-10">
                     <div className="relative mb-8 inline-block">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center border border-primary/20 shadow-lg backdrop-blur-sm group-hover:border-primary/40 transition-all duration-700">
-                        <motion.div animate={{ y: [0, -8, 0], scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}>
+                        <motion.div
+                          animate={{ y: [0, -8, 0], scale: [1, 1.05, 1] }}
+                          transition={{
+                            repeat: Infinity,
+                            duration: 3,
+                            ease: "easeInOut",
+                          }}
+                        >
                           <Target className="w-9 h-9 text-primary drop-shadow-lg" />
                         </motion.div>
                       </div>
-                      <motion.div className="absolute inset-0 border-2 border-primary/20 rounded-2xl" animate={{ rotate: 360 }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }} style={{ transformOrigin: 'center' }} />
+                      <motion.div
+                        className="absolute inset-0 border-2 border-primary/20 rounded-2xl"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                        style={{ transformOrigin: "center" }}
+                      />
                     </div>
 
                     <div className="flex items-center gap-3 mb-6">
-                      <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent">Vision</h3>
-                      <motion.div className="w-12 h-0.5 bg-gradient-to-r from-primary to-transparent" initial={{ width: 0 }} whileInView={{ width: 48 }} transition={{ duration: 1, delay: 0.3 }} />
+                      <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent">
+                        Vision
+                      </h3>
+                      <motion.div
+                        className="w-12 h-0.5 bg-gradient-to-r from-primary to-transparent"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 48 }}
+                        transition={{ duration: 1, delay: 0.3 }}
+                      />
                     </div>
 
                     <div className="space-y-4">
-                      {["To provide students opportunities for holistic growth through extracurricular & co-curricular activities so that they can sail through their years in the department."].map((text, idx) => (
-                        <motion.div key={idx} className="relative p-5 rounded-2xl bg-gradient-to-br from-primary/5 via-primary/3 to-transparent border border-primary/10 group-hover:border-primary/20 backdrop-blur-sm transition-all duration-500" whileHover={{ x: 4 }}>
+                      {[
+                        "To provide students opportunities for holistic growth through extracurricular & co-curricular activities so that they can sail through their years in the department.",
+                      ].map((text, idx) => (
+                        <motion.div
+                          key={idx}
+                          className="relative p-5 rounded-2xl bg-gradient-to-br from-primary/5 via-primary/3 to-transparent border border-primary/10 group-hover:border-primary/20 backdrop-blur-sm transition-all duration-500"
+                          whileHover={{ x: 4 }}
+                        >
                           <div className="flex items-start gap-4">
-                            <motion.div className="w-3 h-3 rounded-full bg-gradient-to-br from-primary to-accent mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--primary),0.7)]" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }} />
-                            <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">{text}</span>
+                            <motion.div
+                              className="w-3 h-3 rounded-full bg-gradient-to-br from-primary to-accent mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--primary),0.7)]"
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            />
+                            <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">
+                              {text}
+                            </span>
                           </div>
                         </motion.div>
                       ))}
@@ -290,9 +340,27 @@ const Index = () => (
                     <div className="w-96 h-40 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-3xl opacity-60" />
                   </div>
                   <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10 mb-6 flex-nowrap">
-                    <motion.img src="/leftlogo.png" alt="Left Logo" className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl" whileHover={{ scale: 1.1, rotate: -5 }} transition={{ type: "spring", stiffness: 200 }} />
-                    <motion.img src="/logo.png" alt="Logo" className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ type: "spring", stiffness: 200 }} />
-                    <motion.img src="/rightlogo.png" alt="Right Logo" className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl" whileHover={{ scale: 1.1, rotate: -5 }} transition={{ type: "spring", stiffness: 200 }} />
+                    <motion.img
+                      src="/leftlogo.jpg"
+                      alt="Left Logo"
+                      className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    />
+                    <motion.img
+                      src="/logo.png"
+                      alt="Logo"
+                      className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    />
+                    <motion.img
+                      src="/rightlogo.png"
+                      alt="Right Logo"
+                      className="w-20 sm:w-24 md:w-32 lg:w-36 h-auto object-contain drop-shadow-xl"
+                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    />
                   </div>
                   <motion.h4
                     className="text-2xl md:text-3xl font-semibold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary"
@@ -302,7 +370,12 @@ const Index = () => (
                   >
                     Department of Computer Engineering
                   </motion.h4>
-                  <motion.div className="mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent" initial={{ width: 0 }} whileInView={{ width: 96 }} transition={{ duration: 1 }} />
+                  <motion.div
+                    className="mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-primary to-accent"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 96 }}
+                    transition={{ duration: 1 }}
+                  />
                 </div>
               </div>
             </ScrollReveal>
@@ -315,9 +388,16 @@ const Index = () => (
                     <motion.div
                       key={i}
                       className="absolute w-1 h-1 rounded-full bg-accent"
-                      style={{ top: `${Math.random() * 100}%`, right: `${Math.random() * 100}%` }}
+                      style={{
+                        top: `${Math.random() * 100}%`,
+                        right: `${Math.random() * 100}%`,
+                      }}
                       animate={{ y: [0, -20, 0], opacity: [0.3, 1, 0.3] }}
-                      transition={{ duration: 2 + Math.random(), repeat: Infinity, delay: i * 0.2 }}
+                      transition={{
+                        duration: 2 + Math.random(),
+                        repeat: Infinity,
+                        delay: i * 0.2,
+                      }}
                     />
                   ))}
                 </div>
@@ -329,16 +409,40 @@ const Index = () => (
                   <div className="relative z-10">
                     <div className="relative mb-8 inline-block">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/10 flex items-center justify-center border border-accent/20 shadow-lg backdrop-blur-sm group-hover:border-accent/40 transition-all duration-700">
-                        <motion.div animate={{ y: [0, -8, 0], scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 1.5 }}>
+                        <motion.div
+                          animate={{ y: [0, -8, 0], scale: [1, 1.05, 1] }}
+                          transition={{
+                            repeat: Infinity,
+                            duration: 3,
+                            ease: "easeInOut",
+                            delay: 1.5,
+                          }}
+                        >
                           <Rocket className="w-9 h-9 text-accent drop-shadow-lg" />
                         </motion.div>
                       </div>
-                      <motion.div className="absolute inset-0 border-2 border-accent/20 rounded-2xl" animate={{ rotate: -360 }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }} style={{ transformOrigin: 'center' }} />
+                      <motion.div
+                        className="absolute inset-0 border-2 border-accent/20 rounded-2xl"
+                        animate={{ rotate: -360 }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                        style={{ transformOrigin: "center" }}
+                      />
                     </div>
 
                     <div className="flex items-center gap-3 mb-6">
-                      <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent to-primary">Mission</h3>
-                      <motion.div className="w-12 h-0.5 bg-gradient-to-r from-accent to-transparent" initial={{ width: 0 }} whileInView={{ width: 48 }} transition={{ duration: 1, delay: 0.5 }} />
+                      <h3 className="text-5xl font-bold tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent to-primary">
+                        Mission
+                      </h3>
+                      <motion.div
+                        className="w-12 h-0.5 bg-gradient-to-r from-accent to-transparent"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 48 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                      />
                     </div>
 
                     <div className="space-y-4">
@@ -346,7 +450,7 @@ const Index = () => (
                         "To engage students in active co-curricular learning.",
                         "To Provide holistic learning experiences for all students.",
                         "To build supportive and inclusive student communities.",
-                        "To develop soft skills in preparation for graduation and lifelong success."
+                        "To develop soft skills in preparation for graduation and lifelong success.",
                       ].map((text, idx) => (
                         <motion.div
                           key={idx}
@@ -357,8 +461,18 @@ const Index = () => (
                           transition={{ delay: idx * 0.1 + 0.3 }}
                         >
                           <div className="flex items-start gap-4">
-                            <motion.div className="w-3 h-3 rounded-full bg-gradient-to-br from-accent to-primary mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--accent),0.7)]" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }} />
-                            <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">{text}</span>
+                            <motion.div
+                              className="w-3 h-3 rounded-full bg-gradient-to-br from-accent to-primary mt-2 flex-shrink-0 shadow-[0_0_12px_rgba(var(--accent),0.7)]"
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: idx * 0.2,
+                              }}
+                            />
+                            <span className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">
+                              {text}
+                            </span>
                           </div>
                         </motion.div>
                       ))}
@@ -367,7 +481,6 @@ const Index = () => (
                 </div>
               </div>
             </ScrollReveal>
-
           </div>
         </div>
       </div>
@@ -376,12 +489,28 @@ const Index = () => (
     {/* What We Do */}
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading label="What We Do" title="Craft, Create, Collaborate" description="From hackathons to design jams, we build skills that matter." />
+        <SectionHeading
+          label="What We Do"
+          title="Craft, Create, Collaborate"
+          description="From hackathons to design jams, we build skills that matter."
+        />
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { icon: Users, title: "Community Service", desc: "We actively engage in social work, supporting rural communities through education, awareness drives, and meaningful initiatives that create real impact." },
-            { icon: BookOpen, title: "Rural Education", desc: "Empowering students in rural areas by teaching essential skills, spreading knowledge, and guiding them towards better opportunities and brighter futures." },
-            { icon: Sparkles, title: "Events & Initiatives", desc: "Organizing impactful events like Engineers Day, Teachers Day, Women's Day, cleanliness drives, and annual functions to inspire, celebrate, and bring communities together." }
+            {
+              icon: Users,
+              title: "Community Service",
+              desc: "We actively engage in social work, supporting rural communities through education, awareness drives, and meaningful initiatives that create real impact.",
+            },
+            {
+              icon: BookOpen,
+              title: "Rural Education",
+              desc: "Empowering students in rural areas by teaching essential skills, spreading knowledge, and guiding them towards better opportunities and brighter futures.",
+            },
+            {
+              icon: Sparkles,
+              title: "Events & Initiatives",
+              desc: "Organizing impactful events like Engineers Day, Teachers Day, Women's Day, cleanliness drives, and annual functions to inspire, celebrate, and bring communities together.",
+            },
           ].map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.1}>
               <div className="glass-card p-8 group transition-all duration-300 h-full">
@@ -389,7 +518,9 @@ const Index = () => (
                   <item.icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             </ScrollReveal>
           ))}
@@ -400,7 +531,11 @@ const Index = () => (
     {/* Featured Events */}
     <section className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading label="Upcoming" title="Featured Events" description="Mark your calendars — here's what's coming up next." />
+        <SectionHeading
+          label="Upcoming"
+          title="Featured Events"
+          description="Mark your calendars — here's what's coming up next."
+        />
         <div className="relative overflow-hidden">
           <motion.div
             className="flex gap-6"
@@ -416,20 +551,33 @@ const Index = () => (
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-22 h-12 rounded-xl bg-gradient-to-br ${categoryGradients[e.category]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-22 h-12 rounded-xl bg-gradient-to-br ${categoryGradients[e.category]} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <e.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`text-xs font-mono px-3 py-1 rounded-full ${categoryColors[e.category]} font-semibold`}>{e.category}</span>
+                      <span
+                        className={`text-xs font-mono px-3 py-1 rounded-full ${categoryColors[e.category]} font-semibold`}
+                      >
+                        {e.category}
+                      </span>
                       <span className="text-sm text-muted-foreground font-mono flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {e.date}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{e.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{e.description}</p>
-                    <Link to="/gallery" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all group-hover:text-accent">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                      {e.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {e.description}
+                    </p>
+                    <Link
+                      to="/gallery"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all group-hover:text-accent"
+                    >
                       View Gallery <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -444,8 +592,12 @@ const Index = () => (
     {/* Faculty Advisors */}
     <div className="section-padding">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Faculty Advisors</h2>
-        <p className="text-muted-foreground text-sm mb-10">Guiding our mission of social impact, education, and community service</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+          Faculty Advisors
+        </h2>
+        <p className="text-muted-foreground text-sm mb-10">
+          Guiding our mission of social impact, education, and community service
+        </p>
         <div className="grid sm:grid-cols-2 gap-8">
           {facultyAdvisors.map((m, i) => (
             <ScrollReveal key={m.name} delay={i * 0.1}>
@@ -453,16 +605,26 @@ const Index = () => (
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative z-10 w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-primary/30 group-hover:scale-105 transition">
                   {m.imgUrl ? (
-                    <img src={m.imgUrl} alt={m.name} className="w-full h-full object-cover" />
+                    <img
+                      src={m.imgUrl}
+                      alt={m.name}
+                      className="w-full h-full object-cover"
+                    />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/30 to-accent/20 text-xl font-bold text-primary">
-                      {m.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                      {m.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                        .slice(0, 2)}
                     </div>
                   )}
                 </div>
                 <div className="relative z-10 text-center">
                   <h3 className="text-lg font-semibold">{m.name}</h3>
-                  <p className="text-primary text-sm font-medium mt-1">{m.role}</p>
+                  <p className="text-primary text-sm font-medium mt-1">
+                    {m.role}
+                  </p>
                   <p className="text-xs text-muted-foreground mt-1">{m.dept}</p>
                 </div>
               </div>
@@ -471,7 +633,6 @@ const Index = () => (
         </div>
       </div>
     </div>
-
   </div>
 );
 

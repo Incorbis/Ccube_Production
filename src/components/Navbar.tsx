@@ -29,7 +29,9 @@ const Navbar = () => {
   // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   // Close on outside click
@@ -54,7 +56,9 @@ const Navbar = () => {
       <div
         className={cn(
           "fixed inset-0 bg-black/30 backdrop-blur-sm z-[98] md:hidden transition-all duration-300",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
         )}
         onClick={() => setOpen(false)}
         aria-hidden="true"
@@ -64,13 +68,15 @@ const Navbar = () => {
         ref={menuRef}
         className={cn(
           "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
-          scrolled || open ? "nav-glass shadow-sm" : "bg-transparent"
+          scrolled || open ? "nav-glass shadow-sm" : "bg-transparent",
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
-
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group relative z-[101]">
+          <Link
+            to="/"
+            className="flex items-center gap-2 group relative z-[101]"
+          >
             <img
               src="/logo.png"
               alt="C-CUBE Logo"
@@ -78,7 +84,7 @@ const Navbar = () => {
             />
             <span className="text-lg font-bold tracking-tight">C-CUBE</span>
             <img
-              src="/leftlogo.png"
+              src="/leftlogo.jpg"
               alt="Left Logo"
               className="w-8 h-8 object-contain transition-transform duration-200 group-hover:scale-105 group-active:scale-95"
             />
@@ -94,7 +100,7 @@ const Navbar = () => {
                   "px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
                   location.pathname === l.to
                     ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary",
                 )}
               >
                 {l.label}
@@ -114,7 +120,7 @@ const Navbar = () => {
             <span
               className={cn(
                 "block transition-all duration-300",
-                open ? "rotate-90 opacity-0 absolute" : "rotate-0 opacity-100"
+                open ? "rotate-90 opacity-0 absolute" : "rotate-0 opacity-100",
               )}
             >
               <Menu className="w-5 h-5" />
@@ -122,7 +128,7 @@ const Navbar = () => {
             <span
               className={cn(
                 "block transition-all duration-300",
-                open ? "rotate-0 opacity-100" : "-rotate-90 opacity-0 absolute"
+                open ? "rotate-0 opacity-100" : "-rotate-90 opacity-0 absolute",
               )}
             >
               <X className="w-5 h-5" />
@@ -137,7 +143,7 @@ const Navbar = () => {
           aria-label="Navigation menu"
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-border/20",
-            open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
           )}
         >
           <div className="px-6 py-3 space-y-1 pb-5">
@@ -151,16 +157,18 @@ const Navbar = () => {
                 className={cn(
                   "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium",
                   "transition-all duration-300",
-                  open ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0",
+                  open
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-4 opacity-0",
                   location.pathname === l.to
                     ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary",
                 )}
               >
                 <span
                   className={cn(
                     "w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors",
-                    location.pathname === l.to ? "bg-primary" : "bg-border"
+                    location.pathname === l.to ? "bg-primary" : "bg-border",
                   )}
                 />
                 {l.label}
