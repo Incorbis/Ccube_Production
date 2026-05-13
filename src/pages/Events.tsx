@@ -3,19 +3,19 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Calendar, MapPin } from "lucide-react";
 
-import img1 from "../assets/Events/Events/SEInduction/1.png"
-import img2 from "../assets/Events/Events/SposExpertSession/1.jpg"
-import img3 from "../assets/Events/Events/engineerDay/1.jpg"
-import img4 from "../assets/Events/Events/TeacherDay/5.jpg"
-import img5 from "../assets/Events/Events/CDAC/1.jpg"
-import img6 from "../assets/Events/Events/TestingTools/1.png"
-import img7 from "../assets/Events/Events/OldAgeVisit/1.jpg"
-import img8 from "../assets/Events/Events/Farewell/1.jpg"
-import img9 from "../assets/Events/Events/engineerDay/2.jpg"
-import img10 from "../assets/Events/Events/CleaningCampLohagad/1.jpg"
-import img11 from "../assets/Events/Events/TrekkingCleaning/2.jpg"
+import img1 from "../assets/Events/SEInduction/1.png"
+import img2 from "../assets/Events/SposExpertSession/1.jpg"
+import img3 from "../assets/Events/engineerDay/1.jpg"
+import img4 from "../assets/Events/TeacherDay/5.jpg"
+import img5 from "../assets/Events/CDAC/1.jpg"
+import img6 from "../assets/Events/TestingTools/1.png"
+import img7 from "../assets/Events/OldAgeVisit/1.jpg"
+import img8 from "../assets/Events/Farewell/1.jpg"
+import img9 from "../assets/Events/engineerDay/2.jpg"
+import img10 from "../assets/Events/CleaningCampLohagad/1.jpg"
+import img11 from "../assets/Events/TrekkingCleaning/2.jpg"
 
-import img14 from "../assets/Events/Events/TrekkingCleaning/1.jpg"
+import img14 from "../assets/Events/TrekkingCleaning/1.jpg"
 type EventType = {
   title: string;
   date: string;
