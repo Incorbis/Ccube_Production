@@ -4,76 +4,76 @@ import SectionHeading from "@/components/SectionHeading";
 import { Camera, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 // SE Induction
-import SeInduction1 from "../assets/Events/Events/SEInduction/1.png";
-import SeInduction2 from "../assets/Events/Events/SEInduction/2.png";
-import SeInduction3 from "../assets/Events/Events/SEInduction/3.png";
-import SeInduction4 from "../assets/Events/Events/SEInduction/4.png";
-import SeInduction5 from "../assets/Events/Events/SEInduction/5.png";
+import SeInduction1 from "../assets/Events/SEInduction/1.png";
+import SeInduction2 from "../assets/Events/SEInduction/2.png";
+import SeInduction3 from "../assets/Events/SEInduction/3.png";
+import SeInduction4 from "../assets/Events/SEInduction/4.png";
+import SeInduction5 from "../assets/Events/SEInduction/5.png";
 
 // SPOS Expert Session
-import Spos1 from "../assets/Events/Events/SposExpertSession/1.jpg";
-import Spos2 from "../assets/Events/Events/SposExpertSession/2.jpg";
-import Spos3 from "../assets/Events/Events/SposExpertSession/3.jpg";
-import Spos4 from "../assets/Events/Events/SposExpertSession/4.jpg";
+import Spos1 from "../assets/Events/SposExpertSession/1.jpg";
+import Spos2 from "../assets/Events/SposExpertSession/2.jpg";
+import Spos3 from "../assets/Events/SposExpertSession/3.jpg";
+import Spos4 from "../assets/Events/SposExpertSession/4.jpg";
 
 // Teacher Day
-import TeacherDay5 from "../assets/Events/Events/TeacherDay/5.jpg";
-import TeacherDay7 from "../assets/Events/Events/TeacherDay/7.jpg";
-import TeacherDay8 from "../assets/Events/Events/TeacherDay/8.jpg";
-import TeacherDay9 from "../assets/Events/Events/TeacherDay/9.jpg";
+import TeacherDay5 from "../assets/Events/TeacherDay/5.jpg";
+import TeacherDay7 from "../assets/Events/TeacherDay/7.jpg";
+import TeacherDay8 from "../assets/Events/TeacherDay/8.jpg";
+import TeacherDay9 from "../assets/Events/TeacherDay/9.jpg";
 
 // Engineer Day
-import EngineerDay1 from "../assets/Events/Events/engineerDay/1.jpg";
-import EngineerDay2 from "../assets/Events/Events/engineerDay/2.jpg";
-import EngineerDay3 from "../assets/Events/Events/engineerDay/3.jpg";
-import EngineerDay4 from "../assets/Events/Events/engineerDay/4.jpg";
-import EngineerDay5 from "../assets/Events/Events/engineerDay/5.jpg";
+import EngineerDay1 from "../assets/Events/engineerDay/1.jpg";
+import EngineerDay2 from "../assets/Events/engineerDay/2.jpg";
+import EngineerDay3 from "../assets/Events/engineerDay/3.jpg";
+import EngineerDay4 from "../assets/Events/engineerDay/4.jpg";
+import EngineerDay5 from "../assets/Events/engineerDay/5.jpg";
 
 // CDAC
-import Cdac1 from "../assets/Events/Events/CDAC/1.jpg";
-import Cdac2 from "../assets/Events/Events/CDAC/2.jpg";
-import Cdac3 from "../assets/Events/Events/CDAC/3.jpg";
-import Cdac4 from "../assets/Events/Events/CDAC/4.jpg";
-import Cdac5 from "../assets/Events/Events/CDAC/5.jpg";
+import Cdac1 from "../assets/Events/CDAC/1.jpg";
+import Cdac2 from "../assets/Events/CDAC/2.jpg";
+import Cdac3 from "../assets/Events/CDAC/3.jpg";
+import Cdac4 from "../assets/Events/CDAC/4.jpg";
+import Cdac5 from "../assets/Events/CDAC/5.jpg";
 
 // Testing Tools
-import TestingTools1 from "../assets/Events/Events/TestingTools/1.png";
-import TestingTools2 from "../assets/Events/Events/TestingTools/2.png";
-import TestingTools3 from "../assets/Events/Events/TestingTools/3.png";
+import TestingTools1 from "../assets/Events/TestingTools/1.png";
+import TestingTools2 from "../assets/Events/TestingTools/2.png";
+import TestingTools3 from "../assets/Events/TestingTools/3.png";
 
 // Cleaning Camp Lohagad
-import CleaningCamp1 from "../assets/Events/Events/CleaningCampLohagad/1.jpg";
-import CleaningCamp2 from "../assets/Events/Events/CleaningCampLohagad/2.jpg";
-import CleaningCamp3 from "../assets/Events/Events/CleaningCampLohagad/3.jpg";
-import CleaningCamp4 from "../assets/Events/Events/CleaningCampLohagad/4.jpg";
+import CleaningCamp1 from "../assets/Events/CleaningCampLohagad/1.jpg";
+import CleaningCamp2 from "../assets/Events/CleaningCampLohagad/2.jpg";
+import CleaningCamp3 from "../assets/Events/CleaningCampLohagad/3.jpg";
+import CleaningCamp4 from "../assets/Events/CleaningCampLohagad/4.jpg";
 
 // Old Age Visit
-import OldAge1 from "../assets/Events/Events/OldAgeVisit/1.jpg";
-import OldAge2 from "../assets/Events/Events/OldAgeVisit/2.jpg";
-import OldAge3 from "../assets/Events/Events/OldAgeVisit/3.jpg";
-import OldAge4 from "../assets/Events/Events/OldAgeVisit/4.jpg";
-import OldAge5 from "../assets/Events/Events/OldAgeVisit/5.jpg";
+import OldAge1 from "../assets/Events/OldAgeVisit/1.jpg";
+import OldAge2 from "../assets/Events/OldAgeVisit/2.jpg";
+import OldAge3 from "../assets/Events/OldAgeVisit/3.jpg";
+import OldAge4 from "../assets/Events/OldAgeVisit/4.jpg";
+import OldAge5 from "../assets/Events/OldAgeVisit/5.jpg";
 
 // Farewell
-import Farewell1 from "../assets/Events/Events/Farewell/1.jpg";
-import Farewell2 from "../assets/Events/Events/Farewell/2.jpg";
-import Farewell3 from "../assets/Events/Events/Farewell/3.jpg";
-import Farewell4 from "../assets/Events/Events/Farewell/4.jpg";
-import Farewell5 from "../assets/Events/Events/Farewell/5.jpg";
+import Farewell1 from "../assets/Events/Farewell/1.jpg";
+import Farewell2 from "../assets/Events/Farewell/2.jpg";
+import Farewell3 from "../assets/Events/Farewell/3.jpg";
+import Farewell4 from "../assets/Events/Farewell/4.jpg";
+import Farewell5 from "../assets/Events/Farewell/5.jpg";
 
 // Trekking Cleaning
-import TrekkingCleaning1 from "../assets/Events/Events/TrekkingCleaning/1.jpg";
-import TrekkingCleaning3 from "../assets/Events/Events/TrekkingCleaning/3.jpg";
-import TrekkingCleaning2 from "../assets/Events/Events/TrekkingCleaning/2.jpg";
-import TrekkingCleaning4 from "../assets/Events/Events/TrekkingCleaning/4.jpg";
-import TrekkingCleaning5 from "../assets/Events/Events/TrekkingCleaning/5.jpg";
+import TrekkingCleaning1 from "../assets/Events/TrekkingCleaning/1.jpg";
+import TrekkingCleaning3 from "../assets/Events/TrekkingCleaning/3.jpg";
+import TrekkingCleaning2 from "../assets/Events/TrekkingCleaning/2.jpg";
+import TrekkingCleaning4 from "../assets/Events/TrekkingCleaning/4.jpg";
+import TrekkingCleaning5 from "../assets/Events/TrekkingCleaning/5.jpg";
 
 //literacy
-import Literacy1 from "../assets/Events/Events/Literacy/1.jpg";
-import Literacy2 from "../assets/Events/Events/Literacy/2.jpg";
-import Literacy3 from "../assets/Events/Events/Literacy/3.jpg";
-import Literacy4 from "../assets/Events/Events/Literacy/4.jpg";
-import Literacy5 from "../assets/Events/Events/Literacy/5.jpg";
+import Literacy1 from "../assets/Events/Literacy/1.jpg";
+import Literacy2 from "../assets/Events/Literacy/2.jpg";
+import Literacy3 from "../assets/Events/Literacy/3.jpg";
+import Literacy4 from "../assets/Events/Literacy/4.jpg";
+import Literacy5 from "../assets/Events/Literacy/5.jpg";
 
 // Type definitions
 interface Event {
