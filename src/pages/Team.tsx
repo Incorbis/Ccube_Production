@@ -21,12 +21,12 @@ const facultyAdvisors = [
 ];
 
 const coreTeam = [
-  { name: "Aditya Divate", role: "President", dept: "", imgUrl: "../../src/assets/Team/AdityaDivate.jpeg" },
-  { name: "Samruddhi Achari", role: "Joint President", dept: "", imgUrl: "../../src/assets/Team/" },
-  { name: "Manjeet Kumar", role: "Secretary", dept: "", imgUrl: "../../src/assets/Team/Manjeet.jpeg" },
-  { name: "Adit Patil", role: "Joint Secretary", dept: "", imgUrl: "../../src/assets/Team/AditiPatel.jpeg" },
-  { name: "Siddhi Patil", role: "Treasurer", dept: "", imgUrl: "../../src/assets/Team/SiddhiPatil.jpg"},
-  { name: "Kanchan Garad", role: "Joint Treasurer", dept: "", imgUrl: "../../src/assets/Team/Kanchan.jpeg" },
+  { name: "Aditya Divate", role: "President", dept: "", imgUrl: "../../src/assets/AdityaDivate.jpeg" },
+  { name: "Samruddhi Achari", role: "Joint President", dept: "", imgUrl: "../../src/assets/" },
+  { name: "Manjeet Kumar", role: "Secretary", dept: "", imgUrl: "../../src/assets/Manjeet.jpeg" },
+  { name: "Adit Patil", role: "Joint Secretary", dept: "", imgUrl: "../../src/assets/AditiPatel.jpeg" },
+  { name: "Siddhi Patil", role: "Treasurer", dept: "", imgUrl: "../../src/assets/SiddhiPatil.jpg"},
+  { name: "Kanchan Garad", role: "Joint Treasurer", dept: "", imgUrl: "../../src/assets/Kanchan.jpeg" },
 ];
 
 const teams = [
@@ -196,7 +196,7 @@ const Team = () => (
             <div className="flex justify-center">
               <div className="w-full max-w-4xl h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center overflow-hidden">
                 <img
-                  src="../../src/assets/Team/Team.jpg"
+                  src="../../src/assets/Team.jpg"
                   alt="Our Team"
                   className="w-full h-full object-cover"
                 />
