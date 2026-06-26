@@ -5,18 +5,18 @@ import { Linkedin, Github } from "lucide-react";
 
 const facultyAdvisors = [
   {
-    name: "Dr. Minal Bodke ",
-    role: "Faculty Advisor",
-    dept: "Department of Computer Engineering",
-    imgUrl: "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
-  
-  },
-  {
     name: "Prof. Trupti Kherde",
-    role: "Faculty Co-Advisor",
+    role: "Faculty Advisor",
     dept: "Department of Computer Engineering",
     imgUrl: "https://www.pccoer.com/computer/images/Teach/trupti.png",
    
+  },
+  {
+    name: "Dr. Minal Bodke ",
+    role: "Faculty Co-Advisor",
+    dept: "Department of Computer Engineering",
+    imgUrl: "https://www.pccoer.com/computer/images/Teach/photo_minal_bhondave.png",
+  
   },
 ];
 
